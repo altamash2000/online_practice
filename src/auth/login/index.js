@@ -1,10 +1,27 @@
-import React from 'react'
-import { LogoSvg } from '../../assets/svg'
+import React from 'react';
 
-export default function Index() {
+import { Outlet } from 'react-router-dom';
+import BgImg from '../../customComponents/BgImg';
+import { ThemeColors } from '../../theme/theme';
+export default function LoginPage({auth}) {
+ 
+
+
+
+
   return (
-    <section className="">
-      <LogoSvg />
-    </section>
+    <>
+      <div className='container'>
+        <div className='inner-container'>
+          <div style={{background:ThemeColors.light}} className='half1'>
+
+         <Outlet/>
+          </div>
+          <div className='half2'>
+            {/* <BgImg /> */}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
