@@ -1,19 +1,8 @@
-
 import './App.css';
-
+import BaseLayout from "./common/baseLayout"
 function App() {
-
-
-  return (
-    <>
-
-
-
-
-    </>
-  )
-
-
-}
-
+    return (
+      <BaseLayout/>
+    )
+  }
 export default App;
