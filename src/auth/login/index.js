@@ -1,9 +1,10 @@
 import React from 'react'
+import { LogoSvg } from '../../assets/svg'
 
 export default function Index() {
   return (
-    <div>
-      
-    </div>
+    <section className="">
+      <LogoSvg />
+    </section>
   )
 }
