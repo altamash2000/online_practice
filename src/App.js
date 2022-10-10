@@ -2,7 +2,6 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import LoginPage from './auth/login'
 import './App.css';
-
 function App() {
   const isLogin = true;
   if (isLogin) {
