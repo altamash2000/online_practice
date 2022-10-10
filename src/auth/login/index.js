@@ -14,7 +14,6 @@ export default function LoginPage({auth}) {
       <div className='container'>
         <div className='inner-container'>
           <div style={{background:ThemeColors.light}} className='half1'>
-
          <Outlet/>
           </div>
           <div className='half2'>
