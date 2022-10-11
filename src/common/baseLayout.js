@@ -14,10 +14,7 @@ export function BaseLayout() {
         <div className='outerflex'>
           <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
             <Header />
-            <div className="container-flex">
-
-              <Outlet />
-            </div>
+            <div className="container-flex"><Outlet /></div>
           </div>
           <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
             <img src={img} alt="" className='responsiveImg' />
