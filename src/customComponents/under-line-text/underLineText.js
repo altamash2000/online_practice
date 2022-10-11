@@ -23,6 +23,7 @@ export default function UnderLineText({ text, subText }) {
         <>
             <P >{text}</P>
             <p>{subText}</p>
+            <br />
         </>
     )
 }

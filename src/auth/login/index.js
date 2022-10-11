@@ -12,19 +12,8 @@ const LoginPage = ({ auth, setAuth }) => {
     console.log('clicked');
     setAuth(!auth);
     localStorage.setItem("auth", true);
-    navigate("/first-page")
+    // navigate("/first-page")
   }
-
-  // const sectioninner = {
-  //   backgroundColor: ThemeColors.white,
-  //   height: 'auto',
-  //   textAlign: 'center',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   padding:'2rem 0 2rem 0',
-  //   width:'100%',
-  //   display: 'flex',
-  // }
   const cardinner = {
     position: 'relative',
     display: '-webkit-box',
@@ -35,32 +24,41 @@ const LoginPage = ({ auth, setAuth }) => {
     msFlexDirection: 'column',
     flexDirection: 'column',
     minWidth: 0,
-    wordWrap:' break-word',
+    wordWrap: ' break-word',
     backgroundColor: ThemeColors.white,
     backgroundClip: 'border-box',
     border: '1px solid rgba(0,0,0,.125)',
     borderRadius: '0.25rem',
-}
- 
-const cardBodyinner = {
-  webkitBoxFlex: '1',
-  msFlex: '1 1 auto',
-  flex:' 1 1 auto',
-  padding: '3.5rem',
-}
-  
+  }
+
+  const cardBodyinner = {
+    webkitBoxFlex: '1',
+    msFlex: '1 1 auto',
+    flex: ' 1 1 auto',
+    padding: '3.5rem',
+  }
+  const signUp = {
+    color: ThemeColors.primary,
+    textDecoration: 'underline',
+    fontSize: 'large'
+  }
+
   return (
     <section>
       <UnderLineText text='Hey, enter your details to get sign in to your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
       <div style={cardinner}>
-      <div style={cardBodyinner}>
-      <form>
-      <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon/>} righticon={""}/>
-      <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon/>} righticon={<EyeIcon/>}/>
-      <CustomButton title="Login" onClick={onClick}/>
-      </form>
-    </div>
-    </div>
+        <div style={cardBodyinner}>
+          <form>
+            <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
+            <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
+            <CustomButton title="Login" onClick={onClick} />
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+              <p className="pointer" style={{ fontSize: 'large', color: ThemeColors.other }}>Need An Account?</p>
+              <p style={signUp} onClick={() => navigate("sign-up")} className="pointer">Signup</p>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
   )
 }
