@@ -3,6 +3,7 @@ import { ThemeColors } from "../../theme/theme";
 export const StyledInput = styled.div`
   &.inputWithIcon {
     position: relative;
+    margin:10px 0 10px 0;
   }
   .left-icon {
     position: absolute;
@@ -32,4 +33,26 @@ export const formControl = {
     background:ThemeColors.inputbg,
     textAlign:'center',
     border: 'none',
+}
+export const formSelect = {
+    display:'block',
+    width:'100%',
+    fontSize:'1rem',
+    background:ThemeColors.inputbg,
+    textAlign:'center',
+    border:'none',
+    paddingTop:'0.9rem',
+    paddingBottom:'0.9rem',
+    paddingLeft:'1rem',
+
+    // display: 'block',
+    // width: '95%',
+    // padding:'0.375rem 2.25rem 0.375rem 0.75rem',
+    // fontSize:' 1rem',
+    // lineHeight:' 2.4rem',
+    // backgroundClip: 'padding-box', 
+    // background:ThemeColors.inputbg,
+    // textAlign:'center',
+    // border: 'none',
+    // appearance: 'none',
 }

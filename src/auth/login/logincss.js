@@ -1,4 +1,3 @@
-
 import { ThemeColors } from '../../theme/theme';
 export const cardinner = {
     position: 'relative',
@@ -8,13 +7,12 @@ export const cardinner = {
     msFlexDirection: 'column',
     flexDirection: 'column',
     minWidth: 0,
-    wordWrap: ' break-word',
+    wordWrap: 'break-word',
     backgroundColor: ThemeColors.white,
     backgroundClip: 'border-box',
     border: '1px solid rgba(0,0,0,.125)',
-    borderRadius: '0.25rem',
+    borderRadius: '10px',
   }
-
   export  const cardBodyinner = {
     webkitBoxFlex: '1',
     msFlex: '1 1 auto',

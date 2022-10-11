@@ -6,7 +6,7 @@ import CustomInput from '../../customComponents/customTextInput';
 import FormFooter from '../../customComponents/form-footer/form-footer';
 import UnderLineText from '../../customComponents/under-line-text/underLineText';
 import { ThemeColors } from '../../theme/theme';
-import { cardBodyinner, cardinner, signUp } from './logincss';
+import { cardBodyinner, cardinner } from './logincss';
 
 const LoginPage = ({ auth, setAuth }) => {
   const navigate = useNavigate();
