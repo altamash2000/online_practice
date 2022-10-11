@@ -4,6 +4,7 @@ import { MailIcon, PasswordIcon, RightIcon } from '../../assets/icon/inputIcon';
 import CustomButton from '../../customComponents/button/customButton';
 import CustomInput from '../../customComponents/customTextInput';
 import { ThemeColors } from '../../theme/theme';
+import UnderLineText from '../../customComponents/under-line-text/underLineText';
 
 const LoginPage = ({ auth, setAuth }) => {
   const navigate = useNavigate();
@@ -30,12 +31,15 @@ const LoginPage = ({ auth, setAuth }) => {
 
 
   return (
-    <div style={sectioninner}>
+    <section>
+      <UnderLineText text='Hey, enter your details to get sign in to your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
+      <div style={sectioninner}>
       <form>
       <CustomInput name="Email" placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon/>} righticon={<PasswordIcon/>}/>
       <CustomButton title="Login" onClick={onClick}/>
       </form>
     </div>
+    </section>
   )
 }
 

@@ -1,3 +1,8 @@
+:root {
+    --bgColor: #243441;
+    --color: red;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -17,34 +22,39 @@ body {
     flex: 1 1 45%;
     height: 100%;
     color: black;
-    font-family: sans-serif;
+
     text-align: center;
 }
 .half2 {
     flex: 1 1 55%;
     height: 100%;
     color: black;
-    font-family: sans-serif;
+
     text-align: center;
 }
-/* 
-.imgContainer {
+
+.underline-small {
+    color: attr(data-content);
+    display: inline-block;
     position: relative;
-    text-align: center;
-    color: white;
 }
 
-.centered {
+.underline-small::after {
+    content: "";
+    height: 2px;
+    width: 20%;
+    background: attr(data-content);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
-
-/* .float-right {
-    float: right;
+    left: calc(0%);
+    bottom: -5px;
+}
+section {
+    width: 75%;
+    height: 90%;
 }
 
-.float-left {
-    float: left;
-} */
+
+header {
+    padding: 2rem 0 3rem 7rem;
+    display: flex;
+}
