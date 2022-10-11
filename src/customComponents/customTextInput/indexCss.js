@@ -19,7 +19,7 @@ export const StyledInput = styled.div`
 `;
 export const InputLabel = styled.label`
   color: ${ThemeColors.other};
-  margin-bottom:3rem;
+  margin-bottom: 4rem;
 `;
 
 export const formControl = {

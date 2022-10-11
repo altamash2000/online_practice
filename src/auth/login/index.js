@@ -5,6 +5,7 @@ import CustomButton from '../../customComponents/button/customButton';
 import CustomInput from '../../customComponents/customTextInput';
 import { ThemeColors } from '../../theme/theme';
 import UnderLineText from '../../customComponents/under-line-text/underLineText';
+import { cardBodyinner, cardinner, signUp } from './logincss';
 
 const LoginPage = ({ auth, setAuth }) => {
   const navigate = useNavigate();
@@ -13,34 +14,6 @@ const LoginPage = ({ auth, setAuth }) => {
     setAuth(!auth);
     localStorage.setItem("auth", true);
     // navigate("/first-page")
-  }
-  const cardinner = {
-    position: 'relative',
-    display: '-webkit-box',
-    display: '-ms-flexbox',
-    display: 'flex',
-    webkitBoxOrient: 'vertical',
-    webkitBoxDirection: 'normal',
-    msFlexDirection: 'column',
-    flexDirection: 'column',
-    minWidth: 0,
-    wordWrap: ' break-word',
-    backgroundColor: ThemeColors.white,
-    backgroundClip: 'border-box',
-    border: '1px solid rgba(0,0,0,.125)',
-    borderRadius: '0.25rem',
-  }
-
-  const cardBodyinner = {
-    webkitBoxFlex: '1',
-    msFlex: '1 1 auto',
-    flex: ' 1 1 auto',
-    padding: '3.5rem',
-  }
-  const signUp = {
-    color: ThemeColors.primary,
-    textDecoration: 'underline',
-    fontSize: 'large'
   }
 
   return (
