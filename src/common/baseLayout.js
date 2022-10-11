@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import LogPage from '../Pages/LogPage';
-import SignUp from '../Pages/SignUp';
-import { ThemeColors } from '../theme/theme'
-import "./baseLayout.css"
+import LoginPage from '../auth/login';
+import SignUpPage from '../auth/signup';
+import { ThemeColors } from '../theme/theme';
+import "./baseLayout.css";
 
 export  function BaseLayout() {
   return (
@@ -25,9 +25,9 @@ export  function BaseLayout() {
   return(
     <Routes>
       <Route element={<BaseLayout/>}>
-              <Route path='login' element={<LogPage auth={auth} setAuth={setAuth} />} />
-              <Route path='sign-up' element={<SignUp/>}/>
-              <Route index element={<LogPage auth={auth} setAuth={setAuth} />} />
+              <Route path='login' element={<LoginPage auth={auth} setAuth={setAuth} />} />
+              <Route path='sign-up' element={<SignUpPage/>}/>
+              <Route index element={<LoginPage auth={auth} setAuth={setAuth} />} />
       </Route>
     </Routes>
   )

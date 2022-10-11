@@ -1,26 +1,19 @@
-import React from 'react';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-import { Outlet } from 'react-router-dom';
-import BgImg from '../../customComponents/BgImg';
-import { ThemeColors } from '../../theme/theme';
-export default function LoginPage({auth}) {
- 
-
-
-
-
+const LoginPage = ({ auth, setAuth }) => {
+  const navigate = useNavigate();
+  const signIn = () => {
+    setAuth(!auth);
+    localStorage.setItem("auth", true);
+    navigate("/first-page")
+  }
   return (
-    <>
-      <div className='container'>
-        <div className='inner-container'>
-          <div style={{background:ThemeColors.light}} className='half1'>
-         <Outlet/>
-          </div>
-          <div className='half2'>
-            {/* <BgImg /> */}
-          </div>
-        </div>
-      </div>
-    </>
+    <div>
+      <button onClick={signIn}>Sign-IN</button>
+      <button onClick={() => navigate("sign-up")}>Sign-UP</button>
+    </div>
   )
 }
+
+export default LoginPage
