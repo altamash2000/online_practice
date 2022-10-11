@@ -1,8 +1,8 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { LogoSvg } from '../assets/svg';
 import LoginPage from '../auth/login';
 import SignUpPage from '../auth/signup';
+import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
 import "./baseLayout.css";
 
@@ -12,11 +12,11 @@ export function BaseLayout() {
       <div className='innerDiv'>
         <div className='outerflex'>
           <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
-          <header><LogoSvg /></header>
-          <div className="container-flex">
+            <Header />
+            <div className="container-flex">
 
-            <Outlet />
-          </div>
+              <Outlet />
+            </div>
           </div>
           <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
 
