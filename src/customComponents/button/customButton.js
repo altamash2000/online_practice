@@ -8,7 +8,8 @@ export default function CustomButton(props) {
       backgroundColor: ThemeColors.primary,
       borderRadius: 5,
       height:`calc(100px - 50px)`,
-      width:"100%"
+      width:"100%",
+      cursor:'pointer'
     },
     title: {
       color: ThemeColors.white,

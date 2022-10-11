@@ -21,7 +21,7 @@ export default function UnderLineText({ text, subText }) {
         `;
     return (
         <>
-            <P >{text}</P>
+            <P>{text}</P>
             <p>{subText}</p>
             <br />
         </>
