@@ -5,10 +5,10 @@ import FirstPage from './FirstPage'
 const PrivateRoute = () => {
   return (
     <>
-     <Routes>
-        <Route path='first-page' element={<FirstPage/>}/>
-        <Route index  element={<FirstPage/>}/>
-        </Routes> 
+      <Routes>
+        <Route path='first-page' element={<FirstPage />} />
+        <Route index element={<FirstPage />} />
+      </Routes>
     </>
   )
 }
