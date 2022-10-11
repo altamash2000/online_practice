@@ -29,7 +29,7 @@ const LoginPage = ({ auth, setAuth }) => {
 
   }
 
-
+  const signUp = { color: ThemeColors.primary, textDecoration: 'underline', fontSize: 'large' }
 
   return (
     <section>
@@ -38,9 +38,13 @@ const LoginPage = ({ auth, setAuth }) => {
         <form>
           <CustomInput name="Email" placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={<PasswordIcon />} />
           <CustomButton title="Login" onClick={onClick} />
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+            <p className="pointer" style={{ fontSize: 'large', color: ThemeColors.other }}>Need An Account?</p>
+            <p style={signUp} onClick={() => navigate("sign-up")} className="pointer">Signup</p>
+          </div>
         </form>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }
 
