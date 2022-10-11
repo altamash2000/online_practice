@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemeColors } from "../../theme/theme";
-
 const Input = styled.input`
   font-size: 18px;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
   background:${ThemeColors.inputbg};
   border: none;
@@ -12,15 +11,20 @@ const Input = styled.input`
   ::placeholder {
     color: ${ThemeColors.other};
   }
-  width:calc(100vw-500px);
+  margin:0,
   height:calc(100px - 60px);
 `;
-
+const InputLabel = styled.label`
+  color: ${ThemeColors.other};
+  position: absolute;
+  transform: translate(-50%, -50%);
+`;
 
 export default function CustomInput(props) {
-const { name ,placeholder,type ,lefticon , righticon} = props
+const { name ,placeholder,type ,lefticon , righticon,label} = props
     return (
         <StyledInput className={"inputWithIcon"}>
+        <InputLabel >{label}</InputLabel>
          <div className="left-icon">{lefticon}</div>
         <Input type={type}  name={name} placeholder={placeholder}/>
         <div className="right-icon">{righticon}</div>

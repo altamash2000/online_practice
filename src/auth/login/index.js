@@ -21,12 +21,10 @@ const LoginPage = ({ auth, setAuth }) => {
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 5,
-    width: `calc(100% - 1200px)`,
-    position: 'absolute',
-    margin: 'auto',
+    padding: '2rem 0 2rem 0',
+    width: '100%',
+    // width:`calc(100% - 40px)`,
     display: 'flex',
-
   }
 
   const signUp = { color: ThemeColors.primary, textDecoration: 'underline', fontSize: 'large' }
@@ -38,13 +36,14 @@ const LoginPage = ({ auth, setAuth }) => {
         <form>
           <CustomInput name="Email" placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={<PasswordIcon />} />
           <CustomButton title="Login" onClick={onClick} />
+
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
             <p className="pointer" style={{ fontSize: 'large', color: ThemeColors.other }}>Need An Account?</p>
             <p style={signUp} onClick={() => navigate("sign-up")} className="pointer">Signup</p>
           </div>
         </form>
-      </div >
-    </section >
+      </div>
+    </section>
   )
 }
 
