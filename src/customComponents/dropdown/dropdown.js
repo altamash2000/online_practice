@@ -5,11 +5,10 @@ export default function Dropdown(props) {
     const { option,label,lefticon} = props
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
-    const toggling = () => setIsOpen(!isOpen);
 
     const onOptionClicked = value => () => {
         setSelectedOption(value);
-        setIsOpen(false);
+        setIsOpen(!isOpen);
         console.log(selectedOption);
     };
     return (
@@ -27,20 +26,6 @@ export default function Dropdown(props) {
         </select>
         </StyledInput>
         </>
-        // <DropDownContainer>
-        //     <DropDownHeader>
-        //         {selectedOption || "Class12"}
-        //     </DropDownHeader>
-
-        //     <DropDownListContainer>
-        //         <DropDownList>
-        //             {option.map(option => (
-        //                 <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
-        //                     {option}
-        //                 </ListItem>
-        //             ))}
-        //         </DropDownList>
-        //     </DropDownListContainer>
-        // </DropDownContainer>
+       
     )
 }
