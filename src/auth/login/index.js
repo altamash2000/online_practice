@@ -20,21 +20,17 @@ const LoginPage = ({ auth, setAuth }) => {
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    padding:5,
-    width:`calc(100% - 1200px)`,
-    position: 'absolute',
-    margin: 'auto',
+    padding:'2rem 0 2rem 0',
+    width:'100%',
+    // width:`calc(100% - 40px)`,
     display: 'flex',
-
   }
-    
-
-
   return (
     <section>
       <UnderLineText text='Hey, enter your details to get sign in to your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
       <div style={sectioninner}>
       <form>
+   
       <CustomInput name="Email" placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon/>} righticon={<PasswordIcon/>}/>
       <CustomButton title="Login" onClick={onClick}/>
       </form>
