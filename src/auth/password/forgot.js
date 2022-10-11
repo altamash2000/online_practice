@@ -10,7 +10,7 @@ import { cardBodyinner, cardinner } from '../login/logincss'
 export default function ForgotPassword() {
   const navigate = useNavigate(0)
   const onclick = () => {
-
+    navigate("otp")
   }
   const login = () => {
     navigate("/")
@@ -22,7 +22,7 @@ export default function ForgotPassword() {
         <div style={cardBodyinner}>
           <form>
             <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
-            <CustomButton title="Login" onClick={onclick} />
+            <CustomButton title="Continue" onClick={onclick} />
             <FormFooter leftText='Remember Password?' rightClick={login} rightText='Login' />
 
           </form>

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { formSelect, InputLabel, StyledInput } from '../customTextInput/indexCss';
-import { DropDownContainer, DropDownHeader, DropDownList, DropDownListContainer, ListItem } from './dropdownCss';
 
 export default function Dropdown(props) {
     const { option,label,lefticon} = props
