@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
+import { SvgGroup } from '../assets/svg';
 import LoginPage from '../auth/login';
 import SignUpPage from '../auth/signup';
 import Header from '../navigations/header';
@@ -19,7 +20,9 @@ export function BaseLayout() {
             </div>
           </div>
           <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
-
+            <div className="">
+              <SvgGroup />
+            </div>
           </div>
         </div>
       </div>
