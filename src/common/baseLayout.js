@@ -5,6 +5,7 @@ import LoginPage from '../auth/login';
 import SignUpPage from '../auth/signup';
 import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
+import img from '../assets/images/Group 2.png'
 import "./baseLayout.css";
 
 export function BaseLayout() {
@@ -20,9 +21,7 @@ export function BaseLayout() {
             </div>
           </div>
           <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
-            <div className="">
-              <SvgGroup />
-            </div>
+            <img src={img} alt="" className='responsiveImg' />
           </div>
         </div>
       </div>

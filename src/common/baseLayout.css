@@ -20,7 +20,6 @@
 .right-flex {
     flex: 1 1 55%;
     height: 100%;
-
     background-image: url(../assets//images/Rectangle\ 6.png);
 
     background-position: center;
@@ -32,4 +31,10 @@
     height: 100%;
 }
 
-
+.responsiveImg {
+    width: 65%;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
