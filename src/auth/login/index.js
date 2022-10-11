@@ -25,7 +25,7 @@ const LoginPage = ({ auth, setAuth }) => {
     position: 'absolute',
     margin: 'auto',
     display: 'flex',
-    margin:10,
+
   }
     
 
