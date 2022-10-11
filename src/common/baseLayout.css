@@ -10,6 +10,7 @@
 .left-flex {
     flex: 1 1 45%;
     height: 100%;
+    /* height: max-content; */
 }
 .container-flex {
     display: flex;

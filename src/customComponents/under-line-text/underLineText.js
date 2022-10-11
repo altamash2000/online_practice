@@ -5,10 +5,9 @@ import { ThemeColors } from '../../theme/theme'
 export default function UnderLineText({ text, subText }) {
     const P = styled.p`
         color: ${ThemeColors.primary};
-        display: inline-block;
         position: relative;
-        font-family: IBM Plex Sans;
-        font-size: 2.5rem;
+        font-family: Light;
+        font-size: 2rem;
         &:after {
             content: "";
             height: 2px;
@@ -23,7 +22,6 @@ export default function UnderLineText({ text, subText }) {
         <>
             <P>{text}</P>
             <p>{subText}</p>
-            <br />
         </>
     )
 }
