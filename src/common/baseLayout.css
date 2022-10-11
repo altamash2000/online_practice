@@ -8,12 +8,12 @@ width: 100%;
     width: 100%;
 }
 .left-flex{
-    flex: 1 1 45%;
+    flex: 1 1 55%;
     height: 100%;
 }
 
 .right-flex{
-    flex: 1 1 55%;
+    flex: 1 1 45%;
     height: 100%;
 
     background-image: url(../assets//images/Rectangle\ 6.png);
