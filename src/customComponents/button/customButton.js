@@ -15,7 +15,7 @@ export default function CustomButton(props) {
       fontSize:'20px',
       lineHeight:'20px',
       textAlign: 'center',
-      padding:10
+      padding:15
     },
   };
   return (
