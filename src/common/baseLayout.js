@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
+import img from '../assets/images/Group 2.png';
 import LoginPage from '../auth/login';
 import SignUpPage from '../auth/signup';
 import Header from '../navigations/header';
@@ -13,13 +14,10 @@ export function BaseLayout() {
         <div className='outerflex'>
           <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
             <Header />
-            <div className="container-flex">
-
-              <Outlet />
-            </div>
+            <div className="container-flex"><Outlet /></div>
           </div>
           <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
-
+            <img src={img} alt="" className='responsiveImg' />
           </div>
         </div>
       </div>

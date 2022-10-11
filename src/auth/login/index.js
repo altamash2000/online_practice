@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { MailIcon, PasswordIcon, RightIcon } from '../../assets/icon/inputIcon';
+import { MailIcon, PasswordIcon } from '../../assets/icon/inputIcon';
 import CustomButton from '../../customComponents/button/customButton';
 import CustomInput from '../../customComponents/customTextInput';
 import { ThemeColors } from '../../theme/theme';
@@ -8,15 +8,16 @@ import UnderLineText from '../../customComponents/under-line-text/underLineText'
 
 const LoginPage = ({ auth, setAuth }) => {
   const navigate = useNavigate();
-  const onClick = () => console.log('clicked');
-  const signIn = () => {
+  const onClick = () => {
+    console.log('clicked');
     setAuth(!auth);
     localStorage.setItem("auth", true);
     navigate("/first-page")
   }
-  const sectioninner={
-    backgroundColor:ThemeColors.white,
-    height:'auto',
+
+  const sectioninner = {
+    backgroundColor: ThemeColors.white,
+    height: 'auto',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
