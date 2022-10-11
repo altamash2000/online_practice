@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EyeIcon, MailIcon, PasswordIcon } from '../../assets/icon/inputIcon';
 import CustomButton from '../../customComponents/button/customButton';
 import CustomInput from '../../customComponents/customTextInput';
-import { ThemeColors } from '../../theme/theme';
+import FormFooter from '../../customComponents/form-footer/form-footer';
 import UnderLineText from '../../customComponents/under-line-text/underLineText';
+import { ThemeColors } from '../../theme/theme';
 
 const LoginPage = ({ auth, setAuth }) => {
   const navigate = useNavigate();
@@ -16,8 +17,6 @@ const LoginPage = ({ auth, setAuth }) => {
   }
   const cardinner = {
     position: 'relative',
-    display: '-webkit-box',
-    display: '-ms-flexbox',
     display: 'flex',
     webkitBoxOrient: 'vertical',
     webkitBoxDirection: 'normal',
@@ -37,11 +36,10 @@ const LoginPage = ({ auth, setAuth }) => {
     flex: ' 1 1 auto',
     padding: '3.5rem',
   }
-  const signUp = {
-    color: ThemeColors.primary,
-    textDecoration: 'underline',
-    fontSize: 'large'
+  const signUp = () => {
+    navigate("sign-up")
   }
+
 
   return (
     <section>
@@ -51,11 +49,13 @@ const LoginPage = ({ auth, setAuth }) => {
           <form>
             <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
             <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
-            <CustomButton title="Login" onClick={onClick} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
-              <p className="pointer" style={{ fontSize: 'large', color: ThemeColors.other }}>Need An Account?</p>
-              <p style={signUp} onClick={() => navigate("sign-up")} className="pointer">Signup</p>
+              <p><input type="checkbox" value="RememberMe" />Remember me</p>
+              <p style={{ color: ThemeColors.primary }} className="pointer" >Forgot Password?</p>
             </div>
+            <CustomButton title="Login" onClick={onClick} />
+            <FormFooter leftText='Need An Account?' rightClick={signUp} rightText='Signup' />
+
           </form>
         </div>
       </div>
