@@ -1,22 +1,27 @@
-
 import { ThemeColors } from '../../theme/theme';
-export default function customButton() {
+export default function CustomButton(props) {
+  const { title, onClick } = props;
   // define your styles
-const styles = {
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: ThemeColors.primary,
-    borderRadius: 5,
-  },
-  title: {
-    color: ThemeColors.white,
-  },
-};
+  const styles = {
+    container: {
+      textAlign: 'center',
+      backgroundColor: ThemeColors.primary,
+      borderRadius: 5,
+      height:`calc(100px - 50px)`,
+      width:"100%"
+    },
+    title: {
+      color: ThemeColors.white,
+      fontSize:'20px',
+      lineHeight:'20px',
+      textAlign: 'center',
+      padding:10
+    },
+  };
   return (
-    <div  style={{backgroundColor:styles.container.backgroundColor,borderRadius:styles.container.borderRadius}}>
+    <div style={styles.container} onClick={() =>{onClick()}}>
       <div>
-        <p style={{color:styles.title.color}}>Login</p>
+        <p style={styles.title}>{title}</p>
       </div>
     </div>
   )
@@ -24,4 +29,4 @@ const styles = {
 
 
 
- 
+

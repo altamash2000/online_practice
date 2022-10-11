@@ -10,6 +10,7 @@ export const ThemeColors = {
   black: "#000000",
   white: "#FFFFFF",
   icon: "#BA8ACE",
+  inputbg:"#F3F3F3"
 };
 export const ThemeColorContext = createContext({
     color: ThemeColors.primary,
