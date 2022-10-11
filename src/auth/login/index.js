@@ -1,21 +1,19 @@
 import React from 'react'
-import { ThemeColors } from '../../theme/theme'
-export default function Login() {
-  const styleSection ={
-    backgroundColor:ThemeColors.white,
-    width:"100%",
-    
+import { useNavigate } from 'react-router-dom';
+
+const LoginPage = ({ auth, setAuth }) => {
+  const navigate = useNavigate();
+  const signIn = () => {
+    setAuth(!auth);
+    localStorage.setItem("auth", true);
+    navigate("/first-page")
   }
   return (
-    <>
-      <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
-       <section  style={{backgroundColor:styleSection.backgroundColor,height:styleSection.height, width:styleSection.width}}>
-
-       </section>
-      </div>
-      <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
-
-      </div>
-    </>
+    <div>
+      <button onClick={signIn}>Sign-IN</button>
+      <button onClick={() => navigate("sign-up")}>Sign-UP</button>
+    </div>
   )
 }
+
+export default LoginPage

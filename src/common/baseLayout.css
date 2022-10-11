@@ -15,6 +15,13 @@ width: 100%;
 .right-flex{
     flex: 1 1 55%;
     height: 100%;
+
+    background-image: url(../assets//images/Rectangle\ 6.png);
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .innerDiv{
     width: 100%;
