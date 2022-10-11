@@ -6,7 +6,9 @@ export default function FormFooter(props) {
     const rightTxt = {
         color: ThemeColors.primary,
         textDecoration: 'underline',
-        fontSize: 'large'
+        fontSize: 'large',
+        fontFamily: 'SemiBold',
+        fontWeight: '600'
     }
     return (
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>

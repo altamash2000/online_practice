@@ -21,18 +21,19 @@ export const StyledInput = styled.div`
 export const InputLabel = styled.label`
   color: ${ThemeColors.other};
   margin-bottom: 4rem;
+  font-family:medium;
 `;
 
 export const formControl = {
-    display: 'block',
-    width: '95%',
-    padding:' 0.375rem 0.75rem',
-    fontSize:' 1rem',
-    lineHeight:' 2.4rem',
-    backgroundClip: 'padding-box', 
-    background:ThemeColors.inputbg,
-    textAlign:'center',
-    border: 'none',
+  display: 'block',
+  width: '95%',
+  padding: ' 0.375rem 0.75rem',
+  fontSize: ' 1rem',
+  lineHeight: ' 2.4rem',
+  backgroundClip: 'padding-box',
+  background: ThemeColors.inputbg,
+  textAlign: 'center',
+  border: 'none',
 }
 export const formSelect = {
     display:'block',

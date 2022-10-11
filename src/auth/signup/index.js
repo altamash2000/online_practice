@@ -33,8 +33,8 @@ export default function Signup() {
             <FormFooter leftText='Already Have An Account' rightClick={Login} rightText='Login' />
           </form>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
     </>
   )
 }

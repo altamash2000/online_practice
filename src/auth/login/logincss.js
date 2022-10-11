@@ -18,6 +18,7 @@ export const cardinner = {
     msFlex: '1 1 auto',
     flex: ' 1 1 auto',
     padding: '3.5rem',
+    paddingBottom: '0'
   }
  export const signUp = {
     color: ThemeColors.primary,

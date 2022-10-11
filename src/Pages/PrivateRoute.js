@@ -1,13 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import FirstPage from './FirstPage'
+import UploadPhoto from './uploadPhoto'
 
 const PrivateRoute = () => {
   return (
     <>
       <Routes>
-        <Route path='first-page' element={<FirstPage />} />
-        <Route index element={<FirstPage />} />
+        <Route path='upload-photo' element={<UploadPhoto />} />
+        <Route index element={<UploadPhoto />} />
       </Routes>
     </>
   )
