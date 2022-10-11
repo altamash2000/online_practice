@@ -1,11 +1,10 @@
 import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { SvgGroup } from '../assets/svg';
+import img from '../assets/images/Group 2.png';
 import LoginPage from '../auth/login';
 import SignUpPage from '../auth/signup';
 import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
-import img from '../assets/images/Group 2.png'
 import "./baseLayout.css";
 
 export function BaseLayout() {
