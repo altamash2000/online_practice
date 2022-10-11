@@ -1,9 +1,33 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { MailIcon } from '../../assets/icon/inputIcon'
+import CustomButton from '../../customComponents/button/customButton'
+import CustomInput from '../../customComponents/customTextInput'
+import FormFooter from '../../customComponents/form-footer/form-footer'
+import UnderLineText from '../../customComponents/under-line-text/underLineText'
+import { cardBodyinner, cardinner } from '../login/logincss'
 
-export default function Forgot() {
+export default function ForgotPassword() {
+  const navigate = useNavigate(0)
+  const onclick = () => {
+
+  }
+  const login = () => {
+    navigate("/")
+  }
   return (
-    <div>
-      
-    </div>
+    <section>
+      <UnderLineText text='Forgot Password' subText='When an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
+      <div style={cardinner}>
+        <div style={cardBodyinner}>
+          <form>
+            <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
+            <CustomButton title="Login" onClick={onclick} />
+            <FormFooter leftText='Remember Password?' rightClick={login} rightText='Login' />
+
+          </form>
+        </div>
+      </div>
+    </section>
   )
 }

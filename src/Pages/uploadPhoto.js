@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const FirstPage = () => {
+const UploadPhoto = () => {
+  const navigate = useNavigate()
   const logOut = () => {
     localStorage.removeItem('auth')
+    navigate('/')
   }
   return (
     <div>
@@ -12,4 +15,4 @@ const FirstPage = () => {
   )
 }
 
-export default FirstPage
+export default UploadPhoto

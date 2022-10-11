@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import img from '../assets/images/Group 2.png';
 import LoginPage from '../auth/login';
+import ForgotPassword from '../auth/password/forgot';
 import SignUpPage from '../auth/signup';
 import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
@@ -28,9 +29,10 @@ const Layout = ({ auth, setAuth }) => {
   return (
     <Routes>
       <Route element={<BaseLayout />}>
+        <Route index element={<LoginPage auth={auth} setAuth={setAuth} />} />
         <Route path='login' element={<LoginPage auth={auth} setAuth={setAuth} />} />
         <Route path='sign-up' element={<SignUpPage />} />
-        <Route index element={<LoginPage auth={auth} setAuth={setAuth} />} />
+        <Route path='forgot-password' element={<ForgotPassword />} />
       </Route>
     </Routes>
   )

@@ -14,7 +14,7 @@ const LoginPage = ({ auth, setAuth }) => {
     console.log('clicked');
     setAuth(!auth);
     localStorage.setItem("auth", true);
-    // navigate("/first-page")
+    navigate("/upload-photo")
   }
   const signUp = () => {
     navigate("sign-up")
@@ -30,7 +30,7 @@ const LoginPage = ({ auth, setAuth }) => {
             <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
               <p><input type="checkbox" value="RememberMe" />Remember me</p>
-              <p style={{ color: ThemeColors.primary }} className="pointer" >Forgot Password?</p>
+              <p style={{ color: ThemeColors.primary }} className="pointer" onClick={navigate('forgot-password')} >Forgot Password?</p>
             </div>
             <CustomButton title="Login" onClick={onClick} />
             <FormFooter leftText='Need An Account?' rightClick={signUp} rightText='Signup' />
