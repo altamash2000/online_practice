@@ -1,5 +1,6 @@
 import React from 'react'
-import { ThemeColors } from '../theme/theme'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from '../auth/login'
 import "./baseLayout.css"
 
 export default function baseLayout() {
@@ -7,12 +8,13 @@ export default function baseLayout() {
     <div className='outerDiv'>
      <div className='innerDiv'>
         <div className='outerflex'>
-         <div className='left-flex' style={{backgroundColor:ThemeColors.light}}>
-    
-         </div>
-         <div className='right-flex' style={{backgroundColor:ThemeColors.primary}}>
-         
-         </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/">
+              <Route index element={<Login/>} />
+            </Route>
+          </Routes>
+          </BrowserRouter>
         </div>
      </div>
     </div>

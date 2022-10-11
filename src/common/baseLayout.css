@@ -1,5 +1,3 @@
-
-
 .outerDiv{
 height: 100vh;
 width: 100%;
@@ -10,12 +8,12 @@ width: 100%;
     width: 100%;
 }
 .left-flex{
-    flex: 0 0 60%;
+    flex: 1 1 45%;
     height: 100%;
 }
 
 .right-flex{
-    flex: 0 0 40%;
+    flex: 1 1 55%;
     height: 100%;
 }
 .innerDiv{
