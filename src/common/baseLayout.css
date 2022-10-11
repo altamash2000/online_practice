@@ -20,8 +20,8 @@
 .right-flex {
     flex: 1 1 55%;
     height: 100%;
+    position: relative;
     background-image: url(../assets//images/Rectangle\ 6.png);
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
