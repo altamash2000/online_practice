@@ -11,6 +11,7 @@ export default function Signup() {
   const navigate = useNavigate();
   const onClick = () => {
     console.log("signup create")
+    navigate("/auth/upload-photo")
   }
 
   const Login = () => {
