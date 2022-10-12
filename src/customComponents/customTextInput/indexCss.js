@@ -41,7 +41,7 @@ cursor: pointer;
 
 export const formControl = {
   display: 'block',
-  width: '95%',
+  width: '100%',
   padding: ' 0.375rem 0.75rem',
   fontSize: ' 1rem',
   lineHeight: ' 2.4rem',

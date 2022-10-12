@@ -18,6 +18,7 @@ function App() {
         <>
           <Route path='/*' element={<PrivateRoute />} />
           <Route index element={<Navigate to='first-page' />} />
+          <Route path='select-institute' element={<Navigate  />} />
         </>)}
     </Routes>
   )

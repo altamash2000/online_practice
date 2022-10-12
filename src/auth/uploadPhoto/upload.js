@@ -57,7 +57,7 @@ function Upload({ onDrop, maxFiles = 1 }) {
                 {isFile  &&
                     <div style={cardinner}>
                         <div style={cardBodyinner}>
-                            <div
+                            <div style={{margin:'10px'}}
                                 onClick={() => {
                                     $input.current.click();
 
@@ -95,11 +95,10 @@ function Upload({ onDrop, maxFiles = 1 }) {
                                         multiple={maxFiles > 1}
                                     />
                                     {/* <p className="Medium" style={{ color: ThemeColors.deactive }} >or</p> */}
-                                    <CustomButton title="Choose file" width="40%" />
+                                    <CustomButton title="Choose file" width="65%" />
                                 </div>
                             </div>
                         </div>
-                        <br />
                     </div>
                 }
                 {!isFile && files.map(file => (
