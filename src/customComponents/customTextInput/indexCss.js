@@ -29,7 +29,7 @@ background-color:  transparent;
 border: none;
 border-radius: 5px;
 color: white;
-padding: 15px;
+padding: 10px;
 text-align: center;
 text-decoration: none;
 display: inline-block;
