@@ -7,10 +7,8 @@ export default function CustomButton(props) {
     container: {
       display: 'flex',
       justifyContent: 'center',
-      // textAlign: 'center',
       backgroundColor: ThemeColors.primary,
       borderRadius: 5,
-      // height:`calc(100px - 50px)`,
       width: width,
       cursor: 'pointer',
       padding: '0 15px 0 15px',
@@ -18,9 +16,6 @@ export default function CustomButton(props) {
     title: {
       color: ThemeColors.white,
       fontSize: '20px',
-      // lineHeight:'20px',
-      // textAlign: 'center',
-      // padding:15
     },
   };
 
