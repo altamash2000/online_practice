@@ -50,7 +50,6 @@ const LoginPage = ({ auth, setAuth }) => {
             </div>
             <CustomButton title="Login" onClick={onClick} />
             <FormFooter leftText='Need An Account?' rightClick={signUp} rightText='Signup' />
-
           </form>
           );
           }}
