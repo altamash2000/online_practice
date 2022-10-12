@@ -22,12 +22,18 @@ export default function Otp() {
       <div style={cardinner}>
         <div style={cardBodyinner}>
           <form>
-            <CustomInput name="Email" placeholder="OTP" type="email" label="OTP"  />
+            <div style={{display:'flex',columnGap:'2rem'}}>
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            <CustomInput name="text" placeholder="OTP" type="text" label="OTP"  />
+            </div>      
             <CustomButton title="Continue" onClick={onclick} />
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', }}>
               <p style={rightTxt} className="pointer" >Resend</p>
             </div>
-
           </form>
         </div>
       </div>

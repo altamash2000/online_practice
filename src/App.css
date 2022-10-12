@@ -68,8 +68,9 @@ body {
     bottom: -5px;
 }
 section {
-    width: 75%;
+    width:80%;
     height: 90%;
+    min-width: 350px;
 }
 
 .pointer {
