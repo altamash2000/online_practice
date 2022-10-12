@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import BaseLayout from "./common/baseLayout"
+import BaseLayout from "./common/baseLayout";
 import PrivateRoute from './Pages/PrivateRoute';
 function App() {
   const [authe, setAuth] = useState(false)
@@ -18,7 +18,6 @@ function App() {
         <>
           <Route path='/*' element={<PrivateRoute />} />
           <Route index element={<Navigate to='first-page' />} />
-          <Route path='select-institute' element={<Navigate  />} />
         </>)}
     </Routes>
   )

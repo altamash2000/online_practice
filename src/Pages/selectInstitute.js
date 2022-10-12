@@ -1,12 +1,16 @@
 import React from 'react'
+import { EditIcon, UniversityIcon } from '../assets/icon/inputIcon'
 import { cardBodyinner, cardinner } from '../auth/login/logincss'
 import CustomButton from '../customComponents/button/customButton'
 import CustomInput from '../customComponents/customTextInput'
+import Dropdown from '../customComponents/dropdown/dropdown'
 import UnderLineText from '../customComponents/under-line-text/underLineText'
 
-const onclick=()=>{
+const onclick = () => {
 
 }
+const options = ["Class12", "Class11", "Class10"];
+
 const SelectInstitute = () => {
   return (
     <section>
@@ -14,9 +18,9 @@ const SelectInstitute = () => {
       <div style={cardinner}>
         <div style={cardBodyinner}>
           <form>
-            <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />}  />
-            <CustomInput name="Other" placeholder="Type Here" type="text" label="Other" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
-          
+            <Dropdown name="class" placeholder="Please Select" label="Class" option={options} lefticon={<UniversityIcon />}  />
+            <CustomInput name="Other" placeholder="Type Here" type="text" label="Other" lefticon={<EditIcon />} />
+
             <CustomButton title="Continue" onClick={onclick} />
 
           </form>
