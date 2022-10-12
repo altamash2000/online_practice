@@ -10,7 +10,7 @@ import { cardBodyinner, cardinner } from '../login/logincss'
 export default function ForgotPassword() {
   const navigate = useNavigate(0)
   const onclick = () => {
-    navigate("otp")
+    navigate("/auth/otp")
   }
   const login = () => {
     navigate("/")
