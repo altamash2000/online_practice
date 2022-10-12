@@ -24,6 +24,21 @@ export const InputLabel = styled.label`
   font-family:medium;
 `;
 
+export const Button = styled.button`
+background-color:  transparent;
+border: none;
+border-radius: 5px;
+color: white;
+padding: 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-family:SemiBold;
+margin: 4px 2px;
+cursor: pointer;
+`
+
 export const formControl = {
   display: 'block',
   width: '95%',

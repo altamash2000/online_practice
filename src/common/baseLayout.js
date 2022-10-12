@@ -6,6 +6,7 @@ import ForgotPassword from '../auth/password/forgot';
 import Otp from '../auth/password/otp';
 import Reset from '../auth/password/reset';
 import SignUpPage from '../auth/signup';
+import UploadPage from '../auth/uploadPhoto';
 import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
 import "./baseLayout.css";
@@ -37,6 +38,7 @@ const Layout = ({ auth, setAuth }) => {
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='otp' element={<Otp />} />
         <Route path='reset-password' element={<Reset />} />
+        <Route path='upload-photo' element={<UploadPage />} />
       </Route>
     </Routes>
   )
