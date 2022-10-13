@@ -24,7 +24,6 @@ export default function ForgotPassword() {
             <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
             <CustomButton title="Continue" onClick={onclick} />
             <FormFooter leftText='Remember Password?' rightClick={login} rightText='Login' />
-
           </form>
         </div>
       </div>

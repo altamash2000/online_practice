@@ -2,31 +2,19 @@ import React from "react";
 import { formControl, formControlOtp, InputLabel, StyledInput } from "./indexCss";
 
 
-export default function CustomInput(props , formdata) {
-    const { name, placeholder, type, lefticon, righticon, label } = props ;
-    const {
-        values,
-        touched,
-        errors,
-        dirty,
-        isSubmitting,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        handleReset,
-        setFieldValue
-      } = formdata
-
+export default function CustomInput(props, formdata) {
+    const { name, placeholder, type, lefticon, righticon, label, id, onChange } = props;
     return (
         label === "OTP" ? <StyledInput className={"inputWithIcon"}>
             <div className="left-icon">{lefticon}</div>
             <input type={type} name={name} style={formControlOtp} />
             <div className="right-icon">{righticon}</div>
-          </StyledInput>
+        </StyledInput>
             : <><InputLabel>{label}</InputLabel>
-                <StyledInput className={"inputWithIcon"}>    
+                <StyledInput className={"inputWithIcon"}>
                     <div className="left-icon">{lefticon}</div>
-                    <input type={type} name={name} placeholder={placeholder} style={formControl}/>
+                    <input type={type} id={id} onChange={onChange} name={name} placeholder={placeholder} style={formControl} />
+
                     <div className="right-icon">{righticon}</div>
                 </StyledInput>
             </>

@@ -68,7 +68,7 @@ body {
     bottom: -5px;
 }
 section {
-    width:80%;
+    width: 80%;
     height: 90%;
     min-width: 350px;
 }
@@ -117,3 +117,4 @@ header {
     margin-top: 10px;
     column-gap: 5rem;
 }
+

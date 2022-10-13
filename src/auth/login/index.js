@@ -15,7 +15,7 @@ const LoginPage = ({ auth, setAuth }) => {
     console.log('clicked');
     setAuth(!auth);
     localStorage.setItem("auth", true);
-    navigate("/upload-photo")
+    navigate("/select-institute")
   }
   const signUp = () => {
     navigate("sign-up")
