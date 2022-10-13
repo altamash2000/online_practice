@@ -54,3 +54,14 @@ input::placeholder {
     min-width: 256px;
     margin: 2rem;
   }
+  
+input.error {
+    border-color: red;
+  }
+  
+  
+.input-feedback {
+    color: red;
+    margin-top: .25rem;
+  }
+  
