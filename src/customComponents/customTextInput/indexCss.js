@@ -54,7 +54,7 @@ export const formControl = {
 export const formControlOtp = {
   display: 'block',
   width: '50%',
-  padding: ' 0.375rem 0.75rem',
+  padding: '0.375rem 0.75rem',
   fontSize: ' 1rem',
   lineHeight: ' 2.4rem',
   backgroundClip: 'padding-box',
@@ -75,3 +75,4 @@ export const formSelect = {
   textIndent: '2.5rem',
   borderRadius: '5px',
 }
+
