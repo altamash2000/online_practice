@@ -58,8 +58,6 @@ input::placeholder {
 input.error {
     border-color: red;
   }
-  
-  
 .input-feedback {
     color: red;
     margin-top: .25rem;
@@ -68,16 +66,3 @@ input.error {
     min-width: 298.55px;
   }
 
-  @media screen and (max-width: 480px) {
-    .right-flex {
-      flex: 1 1 55%;
-      position: relative;
-      min-width: 335px;
-      background-color:#F8EFFB !important;
-      background-image:none;
-      height:5.8rem;
-  }
-  .responsiveImg {
-    display: none;
-  }
-  }
