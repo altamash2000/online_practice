@@ -14,9 +14,6 @@ const LoginPage = ({ auth, setAuth }) => {
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
 
-  
-  const [isRevealPwd, setIsRevealPwd] = useState(false);
-
   const signUp = () => {
     navigate("sign-up")
   }
@@ -52,7 +49,7 @@ const LoginPage = ({ auth, setAuth }) => {
             <form onSubmit={handleSubmit}>
             <CustomInput name="email" id="email" onChange={handleChange} placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
             {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
-            <CustomInput name="password"  id="passowrd" onChange={handleChange} placeholder="Password"    type={isRevealPwd ? "text" : "password"} label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />}  />
+            <CustomInput name="password"  id="passowrd" onChange={handleChange} placeholder="Password"   label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />}  />
             {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
               <p><input type="checkbox" value="RememberMe" />Remember me</p>

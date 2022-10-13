@@ -3,13 +3,11 @@ import { useState } from "react";
 import { CrossEyeIcon } from "../../assets/icon/inputIcon";
 import { formControl, formControlOtp, InputLabel, StyledInput } from "./indexCss";
 
-
 export default function CustomInput(props, formdata) {
     const { name, placeholder, type, lefticon, righticon, label, id, onChange } = props;
     const [inputType, setInputType] = useState(false)
     const changeType = () => {
         if (type === 'password') {
-            console.log('input type called');
             setInputType(!inputType);
         }
     }
