@@ -18,7 +18,7 @@ const SelectInstitute = () => {
       <div style={cardinner}>
         <div style={cardBodyinner}>
           <form>
-            <Dropdown name="class" placeholder="Please Select" label="Class" option={options} lefticon={<UniversityIcon />}  />
+            <Dropdown name="class" placeholder="Please Select" label="Select Institute" option={options} lefticon={<UniversityIcon />}  />
             <CustomInput name="Other" placeholder="Type Here" type="text" label="Other" lefticon={<EditIcon />} />
 
             <CustomButton title="Continue" onClick={onclick} />

@@ -1,7 +1,7 @@
 import { ThemeColors } from '../../theme/theme';
 import { Button } from '../customTextInput/indexCss';
 export default function CustomButton(props) {
-  const { title, onClick, width = '100%' } = props;
+  const { title,  type,width = '99%' } = props;
   // define your styles
   const styles = {
     container: {
@@ -20,8 +20,8 @@ export default function CustomButton(props) {
   };
 
   return (
-    <div style={styles.container} onClick={() => { onClick() }}>
-      <Button className='btn' >{title}</Button>
+    <div style={styles.container} >
+      <Button type={type}>{title}</Button>
     </div>
   )
 }
