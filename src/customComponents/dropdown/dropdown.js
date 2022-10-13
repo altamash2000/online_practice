@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { formSelect, InputLabel, StyledInput } from '../customTextInput/indexCss';
+import "../../common/baseLayout.css"
 
 export default function Dropdown(props) {
     const { option, label, lefticon } = props
@@ -11,7 +12,7 @@ export default function Dropdown(props) {
         setIsOpen(!isOpen);
         console.log(selectedOption);
     };
- 
+
     return (
         <>
             <InputLabel>{label}</InputLabel>
@@ -19,7 +20,7 @@ export default function Dropdown(props) {
                 <div className="left-icon">{lefticon}</div>
                 <select style={formSelect}>
                     {option.map(option => (
-                        <option  onClick={onOptionClicked(option)} value={option} >
+                        <option onClick={onOptionClicked(option)} value={option} >
                             {option}
                         </option>
                     ))

@@ -33,7 +33,6 @@ padding: 10px;
 text-decoration: none;
 font-size: 20px;
 font-family: SemiBold;
-margin: 4px 2px;
 cursor: pointer;
 display: flex;
 justify-content: center;
@@ -67,6 +66,7 @@ export const formSelect = {
   display: 'block',
   width: '100%',
   fontSize: '1rem',
+  height: '3rem',
   background: ThemeColors.inputbg,
   border: 'none',
   paddingTop: '0.9rem',
@@ -74,4 +74,5 @@ export const formSelect = {
   paddingLeft: '1rem',
   textIndent: '2.5rem',
   borderRadius: '5px',
+  backgroundClip: 'padding-box',
 }
