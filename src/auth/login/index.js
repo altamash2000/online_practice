@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { EyeIcon, MailIcon, PasswordIcon } from '../../assets/icon/inputIcon';
 import CustomButton from '../../customComponents/button/customButton';
@@ -10,13 +10,13 @@ import { cardBodyinner, cardinner } from './logincss';
 import { Formik } from "formik";
 import * as Yup from "yup";
 const LoginPage = ({ auth, setAuth }) => {
+  const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
-  const onClick = () => {
-    console.log('clicked');
-    setAuth(!auth);
-    localStorage.setItem("auth", true);
-    navigate("/select-institute")
-  }
+
+  
+  const [isRevealPwd, setIsRevealPwd] = useState(false);
+
   const signUp = () => {
     navigate("sign-up")
   }
@@ -29,26 +29,36 @@ const LoginPage = ({ auth, setAuth }) => {
       <div style={cardinner}>
         <div style={cardBodyinner}>
         <Formik
-        initialValues={{ email: "", gender: "", color: "" }}
+        initialValues={{ email: "", password:"" }}
         onSubmit={async (values) => {
           await new Promise((resolve) => setTimeout(resolve, 500));
           alert(JSON.stringify(values, null, 2));
         }}
         validationSchema={Yup.object().shape({
-          email: Yup.string().email(),
-          password: Yup.string()
+          email: Yup.string().email().required("Email is Required").matches(emailregex, "Email is not valid"),
+          password: Yup.string().required("Password is required").matches(passwordRegex, "Password is not valid"),
         })}
       >
         {(props) => {
+            const {
+              touched,
+              errors,
+              dirty,
+              isSubmitting,
+              handleChange,
+              handleSubmit,
+            } = props;
           return (
-          <form>
-            <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} formdata={props}/>
-            <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} formdata={props} />
+            <form onSubmit={handleSubmit}>
+            <CustomInput name="email" id="email" onChange={handleChange} placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
+            {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
+            <CustomInput name="password"  id="passowrd" onChange={handleChange} placeholder="Password"    type={isRevealPwd ? "text" : "password"} label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />}  />
+            {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
               <p><input type="checkbox" value="RememberMe" />Remember me</p>
               <p style={{ color: ThemeColors.primary }} className="pointer" onClick={forgotPass} >Forgot Password?</p>
             </div>
-            <CustomButton title="Login" onClick={onClick} />
+            <CustomButton title="Login" type="submit"/>
             <FormFooter leftText='Need An Account?' rightClick={signUp} rightText='Signup' />
           </form>
           );
