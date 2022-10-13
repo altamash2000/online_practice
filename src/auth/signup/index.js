@@ -30,7 +30,7 @@ export default function Signup() {
         <div style={cardinner}>
           <div style={cardBodyinner}>
             <Formik
-              initialValues={{ email: '',password:'' }}
+              initialValues={{ email: '', password: '', confirmPassword: '' }}
 
               onSubmit={async (values) => {
                 console.log('on submit called')
@@ -40,6 +40,10 @@ export default function Signup() {
               validationSchema={Yup.object().shape({
                 email: Yup.string().email().required("Email is Required").matches(emailregex, "Email is not valid"),
                 password: Yup.string().required("Password is required").matches(passwordRegex, "Password is not valid"),
+                confirmPassword: Yup.string().when("password", {
+                  is: val => (val && val.length > 0 ? true : false),
+                  then: Yup.string().oneOf([Yup.ref("password")], "Both password need to be the same")
+                })
               })}
             >
               {(props) => {
@@ -59,13 +63,15 @@ export default function Signup() {
                 return (
                   <form onSubmit={handleSubmit}>
                     <CustomInput name="fullname" placeholder="Full Name" type="text" label="Full Name" lefticon={<UserIcon />} righticon={""} />
-                    <CustomInput name="email" id="email" onChange={handleChange}   placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={""} values={values} />
+                    <CustomInput name="email" id="email" onChange={handleChange} placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={""} values={values} />
                     {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
                     <Dropdown name="class" placeholder="Class" label="Class" option={options} lefticon={<ClassIcon />} righticon={""} />
-                    <CustomInput name="password" id="password" onChange={handleChange}  placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
+                    <CustomInput name="password" id="password" onChange={handleChange} placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                     {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
-                    <CustomInput name="confirmpassword" placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
-                    <CustomButton title="Signup" type="submit"/>
+                    <CustomInput name="confirmPassword" id="confirmPassword" onChange={handleChange} placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
+                    {errors.confirmPassword && touched.confirmPassword && (<div className="input-feedback">{errors.confirmPassword}</div>)}
+                    <br />
+                    <CustomButton title="Signup" type="submit" />
                     <FormFooter leftText='Already Have An Account' rightClick={Login} rightText='Login' />
                   </form>
                 );

@@ -12,7 +12,7 @@ export default function Dropdown(props) {
         setIsOpen(!isOpen);
         console.log(selectedOption);
     };
- 
+
     return (
         <>
             <InputLabel>{label}</InputLabel>
@@ -20,7 +20,7 @@ export default function Dropdown(props) {
                 <div className="left-icon">{lefticon}</div>
                 <select style={formSelect}>
                     {option.map(option => (
-                        <option  onClick={onOptionClicked(option)} value={option} >
+                        <option onClick={onOptionClicked(option)} value={option} >
                             {option}
                         </option>
                     ))
