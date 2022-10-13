@@ -14,10 +14,10 @@ export default function Signup() {
   const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
-  const onClick = () => {
-    console.log("signup create")
-    navigate("/auth/upload-photo")
-  }
+  // const onClick = () => {
+  //   console.log("signup create")
+  //   navigate("/auth/upload-photo")
+  // }
 
   const Login = () => {
     navigate("/")
@@ -65,7 +65,7 @@ export default function Signup() {
                     <CustomInput name="password" id="password" onChange={handleChange}  placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                     {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
                     <CustomInput name="confirmpassword" placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
-                    <CustomButton title="Signup" type="submit" />
+                    <CustomButton title="Signup" type="submit"/>
                     <FormFooter leftText='Already Have An Account' rightClick={Login} rightText='Login' />
                   </form>
                 );

@@ -25,23 +25,23 @@ export const InputLabel = styled.label`
 `;
 
 export const Button = styled.button`
-background-color:  transparent;
+background-color:  ${ThemeColors.primary};
 border: none;
 border-radius: 5px;
 color: white;
 padding: 10px;
-text-align: center;
 text-decoration: none;
-display: inline-block;
 font-size: 20px;
-font-family:SemiBold;
+font-family: SemiBold;
 margin: 4px 2px;
 cursor: pointer;
+display: flex;
+justify-content: center;
 `
 
 export const formControl = {
   display: 'block',
-  width: '100%',
+  width: '96%',
   padding: ' 0.375rem 0.75rem',
   fontSize: ' 1rem',
   lineHeight: ' 2.4rem',
@@ -61,7 +61,7 @@ export const formControlOtp = {
   background: ThemeColors.inputbg,
   border: 'none',
   borderRadius: '5px',
-  textAlign:'center'
+  textAlign: 'center'
 }
 export const formSelect = {
   display: 'block',
