@@ -82,6 +82,14 @@ header {
     display: flex;
 }
 
+@media screen and (max-width: 480px) {
+    header {
+        justify-content: center;
+        padding: 0;
+        padding-top: 1rem;
+    }
+}
+
 .rounded-checkbox {
     width: 15px;
     height: 15px;
@@ -117,4 +125,3 @@ header {
     margin-top: 10px;
     column-gap: 5rem;
 }
-

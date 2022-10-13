@@ -66,3 +66,18 @@ input.error {
 select {
   min-width: 298.55px;
 }
+
+@media screen  and (max-width: 480px) {
+  .right-flex {
+    flex: 1 1 55%;
+    position: relative;
+    min-width: 335px;
+    background-color:#F8EFFB !important;
+    background-image:none;
+    height:7.8rem;
+    
+}
+.responsiveImg {
+  display: none;
+}
+}
