@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
-import { EyeIcon, MailIcon, PasswordIcon } from '../../assets/icon/inputIcon';
-import { emailregex, passwordRegex } from '../../assets/regex';
-import CustomButton from '../../customComponents/button/customButton';
-import CustomInput from '../../customComponents/customTextInput';
-import FormFooter from '../../customComponents/form-footer/form-footer';
-import UnderLineText from '../../customComponents/under-line-text/underLineText';
-import { ThemeColors } from '../../theme/theme';
-import CustomCard from '../../customComponents/card/CustomCard';
+import { EyeIcon, MailIcon, PasswordIcon } from '../../../assets/icon/inputIcon';
+import { emailregex, passwordRegex } from '../../../assets/regex';
+import CustomButton from '../../../customComponents/button/customButton';
+import CustomInput from '../../../customComponents/customTextInput';
+import FormFooter from '../../../customComponents/form-footer/form-footer';
+import UnderLineText from '../../../customComponents/under-line-text/underLineText';
+import { ThemeColors } from '../../../theme/theme';
+import CustomCard from '../../../customComponents/card/CustomCard';
 
 import { Formik } from "formik";
 const LoginPage = ({ auth, setAuth, setHeight, height }) => {

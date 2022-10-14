@@ -1,9 +1,9 @@
 import React from 'react'
-import CustomButton from '../../customComponents/button/customButton'
-import CustomInput from '../../customComponents/customTextInput'
-import UnderLineText from '../../customComponents/under-line-text/underLineText'
-import { ThemeColors } from '../../theme/theme'
-import CustomCard from '../../customComponents/card/CustomCard';
+import CustomButton from '../../../customComponents/button/customButton'
+import CustomInput from '../../../customComponents/customTextInput'
+import UnderLineText from '../../../customComponents/under-line-text/underLineText'
+import { ThemeColors } from '../../../theme/theme'
+import CustomCard from '../../../customComponents/card/CustomCard';
 
 export default function Otp() {
   const onclick = () => {
