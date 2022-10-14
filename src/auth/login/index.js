@@ -10,11 +10,16 @@ import FormFooter from '../../customComponents/form-footer/form-footer';
 import UnderLineText from '../../customComponents/under-line-text/underLineText';
 import { ThemeColors } from '../../theme/theme';
 import { cardBodyinner, cardinner } from './logincss';
-const LoginPage = ({ auth, setAuth }) => {
-
+import { Formik } from "formik";
+import * as Yup from "yup";
+const LoginPage = ({ auth, setAuth,setHeight ,height }) => {
+  console.log("height setheight    ",setHeight,height);
+  const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
 
   const signUp = () => {
+    setHeight(true);
     navigate("sign-up")
   }
   const forgotPass = () => {

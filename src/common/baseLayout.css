@@ -1,6 +1,14 @@
-.outerDiv {
-  height: 100vh;
+.outerDivLogin {
   width: 100%;
+}
+.outerDivsignUp {
+  width: 100%;
+}
+.height{
+  height: 100vh;
+}
+.height1{
+  height: 100%;
 }
 .outerflex {
   display: flex;
@@ -69,15 +77,13 @@ select {
 
 @media screen  and (max-width: 480px) {
   .right-flex {
-    flex: 1 1 55%;
-    position: relative;
-    min-width: 335px;
-    background-color:#F8EFFB !important;
-    background-image:none;
-    height:7.8rem;
-    
+    display: none;  
+}
+.left-flex {
+  height: 100%;
 }
 .responsiveImg {
   display: none;
 }
+
 }

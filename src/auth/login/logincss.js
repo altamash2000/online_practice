@@ -12,8 +12,6 @@ export const cardinner = {
     borderRadius: '8px',
   }
   export  const cardBodyinner = {
-    // webkitBoxFlex: '1',
-    // msFlex: '1 1 auto',
     flex: '1',
     display: 'flex',
     justifyContent: 'center',
