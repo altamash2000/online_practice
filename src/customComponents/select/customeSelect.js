@@ -16,7 +16,6 @@ export default function CustomSelect({ label, options, leftIcon }) {
         setSelectedOption(index);
         setIsOptionsOpen(false);
     };
-
     const handleKeyDown = (index) => (e) => {
         switch (e.key) {
             case " ":
@@ -29,7 +28,6 @@ export default function CustomSelect({ label, options, leftIcon }) {
                 break;
         }
     };
-
     const handleListKeyDown = (e) => {
         switch (e.key) {
             case "Escape":
