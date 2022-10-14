@@ -1,9 +1,9 @@
 import React from 'react'
-import Header from '../navigations/header'
+import Header from '../../navigations/header'
 import SelectInstitute from './selectInstitute'
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { ThemeColors } from '../theme/theme';
-import img from '../assets/images/Group 2.png';
+import { ThemeColors } from '../../theme/theme';
+import img from '../../assets/images/Group 2.png';
 
 
 const Private = () => {
@@ -27,14 +27,13 @@ const Private = () => {
   )
 }
 
-const Layout = ({ auth, setAuth }) => {
+const PrivateLayout = ({ auth, setAuth }) => {
   return (
     <Routes>
       <Route element={<Private />}>
-        <Route index element={<SelectInstitute />} />
         <Route path='select-institute' element={<SelectInstitute />} />
       </Route>
     </Routes>
   )
 }
-export default Layout
+export default PrivateLayout

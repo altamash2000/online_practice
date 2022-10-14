@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { UploadIcon } from "../../assets/icon/inputIcon";
-import CustomButton from "../../customComponents/button/customButton";
-import UnderLineText from '../../customComponents/under-line-text/underLineText';
-import CustomCard from '../../customComponents/card/CustomCard';
+import { UploadIcon } from "../../../assets/icon/inputIcon";
+import CustomButton from "../../../customComponents/button/customButton";
+import UnderLineText from '../../../customComponents/under-line-text/underLineText';
+import CustomCard from '../../../customComponents/card/CustomCard';
+
 function removeItems(arr, item) {
     for (var i = 0; i < item; i++) {
         arr.pop();

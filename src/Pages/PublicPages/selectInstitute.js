@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { EditIcon, UniversityIcon } from '../assets/icon/inputIcon'
-import CustomButton from '../customComponents/button/customButton'
-import CustomCard from '../customComponents/card/CustomCard'
-import CustomInput from '../customComponents/customTextInput'
-import Dropdown from '../customComponents/dropdown/dropdown'
-import UnderLineText from '../customComponents/under-line-text/underLineText'
+import { EditIcon, UniversityIcon } from '../../assets/icon/inputIcon'
+import CustomButton from '../../customComponents/button/customButton'
+import CustomCard from '../../customComponents/card/CustomCard'
+import CustomInput from '../../customComponents/customTextInput'
+import Dropdown from '../../customComponents/dropdown/dropdown'
+import UnderLineText from '../../customComponents/under-line-text/underLineText'
 
 const onclick = () => {
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { EyeIcon, PasswordIcon } from '../../assets/icon/inputIcon'
-import CustomButton from '../../customComponents/button/customButton'
-import CustomInput from '../../customComponents/customTextInput'
-import UnderLineText from '../../customComponents/under-line-text/underLineText'
-import CustomCard from '../../customComponents/card/CustomCard';
+import { EyeIcon, PasswordIcon } from '../../../assets/icon/inputIcon'
+import CustomButton from '../../../customComponents/button/customButton'
+import CustomInput from '../../../customComponents/customTextInput'
+import UnderLineText from '../../../customComponents/under-line-text/underLineText'
+import CustomCard from '../../../customComponents/card/CustomCard';
 
 
 export default function Reset() {

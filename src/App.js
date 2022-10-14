@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import BaseLayout from "./common/baseLayout";
-import PrivateRoute from './Pages/PrivateRoute';
+import BaseLayout from './common/baseLayout';
+import PrivateLayout from './Pages/PublicPages/PrivateRoute';
+
+
 function App() {
   const [authe, setAuth] = useState(false)
   let auth = localStorage.getItem("auth")
@@ -16,7 +18,7 @@ function App() {
         </>
       ) : (
         <>
-          <Route path='/*' element={<PrivateRoute />} />
+          <Route path='/*' element={<PrivateLayout/>} />
           <Route index element={<Navigate to='first-page' />} />
         </>)}
     </Routes>

@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { MailIcon } from '../../assets/icon/inputIcon'
-import CustomButton from '../../customComponents/button/customButton'
-import CustomInput from '../../customComponents/customTextInput'
-import FormFooter from '../../customComponents/form-footer/form-footer'
-import UnderLineText from '../../customComponents/under-line-text/underLineText'
-import CustomCard from '../../customComponents/card/CustomCard';
+import { MailIcon } from '../../../assets/icon/inputIcon'
+import CustomButton from '../../../customComponents/button/customButton'
+import CustomInput from '../../../customComponents/customTextInput'
+import FormFooter from '../../../customComponents/form-footer/form-footer'
+import UnderLineText from '../../../customComponents/under-line-text/underLineText'
+import CustomCard from '../../../customComponents/card/CustomCard';
 
 export default function ForgotPassword() {
   const navigate = useNavigate(0)

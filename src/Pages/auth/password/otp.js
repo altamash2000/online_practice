@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import CustomButton from '../../customComponents/button/customButton'
-import CustomInput from '../../customComponents/customTextInput'
-import UnderLineText from '../../customComponents/under-line-text/underLineText'
-import { ThemeColors } from '../../theme/theme'
-import CustomCard from '../../customComponents/card/CustomCard';
+import CustomButton from '../../../customComponents/button/customButton'
+import CustomInput from '../../../customComponents/customTextInput'
+import UnderLineText from '../../../customComponents/under-line-text/underLineText'
+import { ThemeColors } from '../../../theme/theme'
+import CustomCard from '../../../customComponents/card/CustomCard';
 
 export default function Otp() {
   const [otpfield, setOtpField] = useState(['otp1', 'otp2', 'otp3', 'otp4', 'otp5', 'otp6'])
