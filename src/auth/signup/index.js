@@ -3,16 +3,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 
-import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../assets/icon/inputIcon'
-import CustomButton from '../../customComponents/button/customButton'
-import CustomInput from '../../customComponents/customTextInput'
-import Dropdown from '../../customComponents/dropdown/dropdown'
-import FormFooter from '../../customComponents/form-footer/form-footer'
-import UnderLineText from '../../customComponents/under-line-text/underLineText'
-import { cardBodyinner, cardinner } from '../login/logincss'
+import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../assets/icon/inputIcon';
+import { emailregex, passwordRegex } from '../../assets/regex';
+import CustomButton from '../../customComponents/button/customButton';
+import CustomInput from '../../customComponents/customTextInput';
+import FormFooter from '../../customComponents/form-footer/form-footer';
+import CustomSelect from '../../customComponents/select/customeSelect';
+import UnderLineText from '../../customComponents/under-line-text/underLineText';
+import { cardBodyinner, cardinner } from '../login/logincss';
 export default function Signup({setHeight,height}) {
-  const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
   const navigate = useNavigate();
   // const onClick = () => {
   //   console.log("signup create")

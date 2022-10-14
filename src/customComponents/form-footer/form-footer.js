@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeColors } from '../../theme/theme'
 
 export default function FormFooter(props) {
-    const { leftText, leftClick, rightText, rightClick } = props
+    const { leftText,  rightText, rightClick } = props
     const rightTxt = {
         color: ThemeColors.primary,
         textDecoration: 'underline',

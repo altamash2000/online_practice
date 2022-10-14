@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import img from '../assets/images/Group 2.png';
 import LoginPage from '../auth/login';
