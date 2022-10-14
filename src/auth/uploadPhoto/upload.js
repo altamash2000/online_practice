@@ -106,7 +106,7 @@ function Upload({ onDrop, maxFiles = 1 }) {
                         </div>
                         <div className="blob-buttons">
                             <CustomButton title="Save" width="20%" />
-                            <CustomButton title="Reset" width="20%" onClick={reset} />
+                            <CustomButton title="Reset" width="20%" func={reset} />
                         </div>
                     </>
                 ))}

@@ -25,11 +25,11 @@ export const InputLabel = styled.label`
 `;
 
 export const Button = styled.button`
-
 border: none;
 border-radius: 5px;
 color: white;
 padding: 10px;
+margin-top:10px;
 text-decoration: none;
 font-size: 20px;
 font-family: SemiBold;

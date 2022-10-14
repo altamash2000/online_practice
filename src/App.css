@@ -123,7 +123,7 @@ header {
     flex-direction: row;
     justify-content: center;
     margin-top: 10px;
-    column-gap: 5rem;
+    column-gap: 9rem;
 }
 
 /* Custome Select CSS */
