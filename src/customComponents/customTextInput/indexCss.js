@@ -25,7 +25,7 @@ export const InputLabel = styled.label`
 `;
 
 export const Button = styled.button`
-background-color:  ${ThemeColors.primary};
+
 border: none;
 border-radius: 5px;
 color: white;

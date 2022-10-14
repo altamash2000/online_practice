@@ -125,3 +125,53 @@ header {
     margin-top: 10px;
     column-gap: 5rem;
 }
+
+/* Custome Select CSS */
+.selectButton {
+    border: 0;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px 0 10px 15px;
+    position: relative;
+    text-align: left;
+}
+
+.selectButton:hover {
+    cursor: pointer;
+}
+
+.selectButton::after {
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    content: " \02C7";
+    font-size: xx-large;
+}
+
+.expanded::after {
+    content: " \02C6";
+    font-size: xx-large;
+}
+
+ul.options {
+    display: none;
+    list-style: none;
+    padding: 4px 0;
+    margin-top: 1px;
+}
+
+ul.show {
+    display: block;
+}
+
+/* ul.options li {
+    padding: 6px 10px;
+} */
+
+/* ul.options li:active,
+ul.options li:focus,
+ul.options li:hover,
+ul.options li[aria-selected="true"] {
+    background: #691c82;
+    cursor: pointer;
+} */
