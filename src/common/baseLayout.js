@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import img from '../assets/images/Group 2.png';
 import LoginPage from '../auth/login';
@@ -11,9 +11,10 @@ import Header from '../navigations/header';
 import { ThemeColors } from '../theme/theme';
 import "./baseLayout.css";
 
-export function BaseLayout() {
+export function BaseLayout({height}) {
+
   return (
-    <div className='outerDiv'>
+    <div className={ height ? 'height1' : 'height'}>
       <div className='innerDiv'>
         <div className='outerflex'>
           <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
@@ -28,13 +29,18 @@ export function BaseLayout() {
     </div>
   )
 }
-const Layout = ({ auth, setAuth }) => {
+const Layout = ({auth, setAuth}) => {
+  // useEffect(()=>{
+  //   console.log("------>")
+  //   setHeight(false);
+  //  },[])
+  const [height,setHeight]=useState(false);
   return (
     <Routes>
-      <Route element={<BaseLayout />}>
-        <Route index element={<LoginPage auth={auth} setAuth={setAuth} />} />
-        <Route path='login' element={<LoginPage auth={auth} setAuth={setAuth} />} />
-        <Route path='sign-up' element={<SignUpPage />} />
+      <Route element={<BaseLayout height={height} />}>
+        <Route index element={<LoginPage auth={auth} setAuth={setAuth} setHeight={setHeight} height={height} />} />
+        <Route path='login' element={<LoginPage auth={auth} setAuth={setAuth} setHeight={setHeight} height={height} />} />
+        <Route path='sign-up' element={<SignUpPage setHeight={setHeight} height={height}/>} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='otp' element={<Otp />} />
         <Route path='reset-password' element={<Reset />} />
