@@ -12,11 +12,9 @@ export default function Reset() {
   const onclick = () => {
     navigate("/")
   }
-
   return (
     <section>
       <UnderLineText text='Reset Password' subText='When an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
-      \
       <CustomCard>
         <form>
           <CustomInput name="password" placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
