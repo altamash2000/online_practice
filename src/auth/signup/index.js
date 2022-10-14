@@ -1,8 +1,7 @@
-import { Formik } from 'formik';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import * as Yup from "yup";
-
+import { Formik } from 'formik';
+import * as Yup from "yup"
 import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../assets/icon/inputIcon'
 import CustomButton from '../../customComponents/button/customButton'
 import CustomInput from '../../customComponents/customTextInput'
@@ -10,14 +9,13 @@ import Dropdown from '../../customComponents/dropdown/dropdown'
 import FormFooter from '../../customComponents/form-footer/form-footer'
 import UnderLineText from '../../customComponents/under-line-text/underLineText'
 import { cardBodyinner, cardinner } from '../login/logincss'
-export default function Signup({setHeight,height}) {
+export default function Signup({setHeight,height,width}) {
   const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
-  // const onClick = () => {
-  //   console.log("signup create")
-  //   navigate("/auth/upload-photo")
-  // }
+  useEffect(()=>{
+    width<=480 &&  setHeight(true)
+   },[])
 
   const Login = () => {
     console.log("height",height,setHeight)
@@ -27,7 +25,7 @@ export default function Signup({setHeight,height}) {
   const options = ["Class12", "Class11", "Class10"];
   return (
     <>
-      <section>
+      <div className='section'>
         <UnderLineText text='Hey, enter your details to get sign up to create your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
         <div style={cardinner}>
           <div style={cardBodyinner}>
@@ -64,7 +62,7 @@ export default function Signup({setHeight,height}) {
                     {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
                     <Dropdown name="class" placeholder="Class" label="Class" option={options} lefticon={<ClassIcon />} righticon={""} />
 
-                    <CustomSelect options={options} leftIcon={<ClassIcon />} />
+                    {/* <CustomSelect options={options} leftIcon={<ClassIcon />} /> */}
                     <CustomInput name="password" id="password" onChange={handleChange} placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                     {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
                     <CustomInput name="confirmPassword" id="confirmPassword" onChange={handleChange} placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
@@ -78,7 +76,7 @@ export default function Signup({setHeight,height}) {
             </Formik>
           </div>
         </div>
-      </section>
+      </div>
     </>
   )
 }

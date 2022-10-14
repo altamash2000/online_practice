@@ -14,8 +14,8 @@ import "./baseLayout.css";
 export function BaseLayout({height}) {
 
   return (
-    <div className={ height ? 'height1' : 'height'}>
-      <div className='innerDiv'>
+    <div className= 'height1 outerDivLogin'>
+      
         <div className='outerflex'>
           <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
             <Header />
@@ -25,22 +25,23 @@ export function BaseLayout({height}) {
             <img src={img} alt="" className='responsiveImg' />
           </div>
         </div>
-      </div>
+      
     </div>
   )
 }
 const Layout = ({auth, setAuth}) => {
-  // useEffect(()=>{
-  //   console.log("------>")
-  //   setHeight(false);
-  //  },[])
+
   const [height,setHeight]=useState(false);
+  const { innerWidth: width} = window;
+
+
+
   return (
     <Routes>
       <Route element={<BaseLayout height={height} />}>
         <Route index element={<LoginPage auth={auth} setAuth={setAuth} setHeight={setHeight} height={height} />} />
         <Route path='login' element={<LoginPage auth={auth} setAuth={setAuth} setHeight={setHeight} height={height} />} />
-        <Route path='sign-up' element={<SignUpPage setHeight={setHeight} height={height}/>} />
+        <Route path='sign-up' element={<SignUpPage setHeight={setHeight} height={height} width={width}/>} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='otp' element={<Otp />} />
         <Route path='reset-password' element={<Reset />} />

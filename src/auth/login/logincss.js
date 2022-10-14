@@ -10,6 +10,7 @@ export const cardinner = {
     backgroundColor: ThemeColors.white,
     backgroundClip: 'border-box',
     borderRadius: '8px',
+    marginTop: '4%'
   }
   export  const cardBodyinner = {
     flex: '1',

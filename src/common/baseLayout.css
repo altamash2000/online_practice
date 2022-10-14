@@ -1,44 +1,45 @@
 .outerDivLogin {
   width: 100%;
 }
-.outerDivsignUp {
-  width: 100%;
-}
+
 .height{
   height: 100vh;
 }
 .height1{
-  height: 100%;
+  height: 100vh;
 }
 .outerflex {
-  display: flex;
+  display: grid;
   height: 100%;
   width: 100%;
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
 }
 .left-flex {
   flex: 1 1 45%;
   height: 100%;
   min-width: 335px;
+  padding-inline: min(13%,7vw);
   /* height: max-content; */
 }
 .container-flex {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: min(12%,12vh);
 }
 
 .right-flex {
   flex: 1 1 55%;
   height: 100%;
+  width: 100%;
   position: relative;
   background-image: url(../assets//images/Rectangle\ 6.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 335px;
-  z-index: -1;
+  /* z-index: -1; */
 }
 .innerDiv {
   width: 100%;
@@ -75,15 +76,19 @@ select {
   min-width: 298.55px;
 }
 
-@media screen  and (max-width: 480px) {
-  .right-flex {
-    display: none;  
+@media screen  and (min-width: 660px) and (max-width:1000px) {
+  .left-flex{
+    padding-inline: min(13%,3vw);
+  }
 }
-.left-flex {
-  height: 100%;
+@media screen  and (max-width: 660px) {
+  .outerflex{
+    grid-template-columns: 1fr;
+  }
+.right-flex {
+    display: none;  
 }
 .responsiveImg {
   display: none;
 }
-
 }
