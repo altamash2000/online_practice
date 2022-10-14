@@ -40,7 +40,7 @@ justify-content: center;
 
 export const formControl = {
   display: 'block',
-  width: '96%',
+  width: '95%',
   padding: ' 0.375rem 0.75rem',
   fontSize: ' 1rem',
   lineHeight: ' 2.4rem',
