@@ -5,13 +5,12 @@ import * as Yup from "yup"
 import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../assets/icon/inputIcon'
 import CustomButton from '../../customComponents/button/customButton'
 import CustomInput from '../../customComponents/customTextInput'
-import Dropdown from '../../customComponents/dropdown/dropdown'
+import CustomSelect from '../../customComponents/select/customeSelect'
 import FormFooter from '../../customComponents/form-footer/form-footer'
 import UnderLineText from '../../customComponents/under-line-text/underLineText'
 import { cardBodyinner, cardinner } from '../login/logincss'
+import { emailregex, passwordRegex } from '../../assets/regex';
 export default function Signup({setHeight,height,width}) {
-  const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
   useEffect(()=>{
     width<=480 &&  setHeight(true)
@@ -60,9 +59,9 @@ export default function Signup({setHeight,height,width}) {
                     <CustomInput name="fullname" placeholder="Full Name" type="text" label="Full Name" lefticon={<UserIcon />} righticon={""} />
                     <CustomInput name="email" id="email" onChange={handleChange} placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={""} values={values} />
                     {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
-                    <Dropdown name="class" placeholder="Class" label="Class" option={options} lefticon={<ClassIcon />} righticon={""} />
+                    {/* <Dropdown name="class" placeholder="Class" label="Class" option={options} lefticon={<ClassIcon />} righticon={""} /> */}
 
-                    {/* <CustomSelect options={options} leftIcon={<ClassIcon />} /> */}
+                    <CustomSelect label='Class' options={options} leftIcon={<ClassIcon />} />
                     <CustomInput name="password" id="password" onChange={handleChange} placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                     {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
                     <CustomInput name="confirmPassword" id="confirmPassword" onChange={handleChange} placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />

@@ -12,8 +12,6 @@ import { cardBodyinner, cardinner } from './logincss';
 import { Formik } from "formik";
 const LoginPage = ({ auth, setAuth,setHeight ,height }) => {
   const { innerWidth: width} = window;
-  const emailregex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
   const navigate = useNavigate();
 
   const signUp = () => {

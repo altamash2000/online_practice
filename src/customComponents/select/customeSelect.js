@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ThemeColors } from "../../theme/theme";
+import { InputLabel } from "../customTextInput/indexCss";
 
 
-export default function CustomSelect({ options, leftIcon }) {
+export default function CustomSelect({ label, options, leftIcon }) {
     const [isOptionsOpen, setIsOptionsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(0);
 
@@ -55,6 +56,7 @@ export default function CustomSelect({ options, leftIcon }) {
     return (
 
         <div className="">
+            <InputLabel>{label}</InputLabel>
             <button
                 type="button"
                 aria-haspopup="listbox"
@@ -64,7 +66,7 @@ export default function CustomSelect({ options, leftIcon }) {
                 onKeyDown={handleListKeyDown}
             >
                 {leftIcon}
-                {options[selectedOption]}
+                <p>{options[selectedOption]}</p>
             </button>
             <ul
                 className={`options ${isOptionsOpen ? "show" : ""}`}
