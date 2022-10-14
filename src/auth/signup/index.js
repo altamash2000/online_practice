@@ -1,6 +1,6 @@
-import { Formik } from 'formik'
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Formik } from 'formik';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 
 import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../assets/icon/inputIcon'
@@ -54,13 +54,8 @@ export default function Signup({setHeight,height}) {
                   values,
                   touched,
                   errors,
-                  dirty,
-                  isSubmitting,
                   handleChange,
-                  handleBlur,
                   handleSubmit,
-                  handleReset,
-                  setFieldValue,
                 } = props;
                 return (
                   <form onSubmit={handleSubmit}>
@@ -68,6 +63,8 @@ export default function Signup({setHeight,height}) {
                     <CustomInput name="email" id="email" onChange={handleChange} placeholder="Email Address" type="text" label="Email Address" lefticon={<MailIcon />} righticon={""} values={values} />
                     {errors.email && touched.email && (<div className="input-feedback">{errors.email}</div>)}
                     <Dropdown name="class" placeholder="Class" label="Class" option={options} lefticon={<ClassIcon />} righticon={""} />
+
+                    <CustomSelect options={options} leftIcon={<ClassIcon />} />
                     <CustomInput name="password" id="password" onChange={handleChange} placeholder="Password" type="password" label="Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                     {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
                     <CustomInput name="confirmPassword" id="confirmPassword" onChange={handleChange} placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
