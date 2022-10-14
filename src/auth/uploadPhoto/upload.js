@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { UploadIcon } from "../../assets/icon/inputIcon";
 import CustomButton from "../../customComponents/button/customButton";
 import UnderLineText from '../../customComponents/under-line-text/underLineText';
-import { cardBodyinner, cardinner } from '../login/logincss';
+import CustomCard from '../../customComponents/card/CustomCard';
 function removeItems(arr, item) {
     for (var i = 0; i < item; i++) {
         arr.pop();
@@ -54,52 +54,50 @@ function Upload({ onDrop, maxFiles = 1 }) {
         <>
             <section>
                 <UnderLineText text='Upload Profile Photo' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
-                {isFile  &&
-                    <div style={cardinner}>
-                        <div style={cardBodyinner}>
-                            <div style={{margin:'10px'}}
-                                onClick={() => {
-                                    $input.current.click();
+                {isFile &&
+                    <CustomCard>
+                        <div style={{ margin: '10px' }}
+                            onClick={() => {
+                                $input.current.click();
 
-                                }}
-                                onDrop={e => {
-                                    e.preventDefault();
-                                    e.persist();
-                                    setfiles(e.dataTransfer.files);
-                                    setIsFile(false);
-                                    setover(false);
-                                }}
-                                onDragOver={e => {
-                                    e.preventDefault();
-                                    setover(true);
-                                }}
-                                onDragLeave={e => {
-                                    e.preventDefault();
-                                    setover(false);
-                                }}
+                            }}
+                            onDrop={e => {
+                                e.preventDefault();
+                                e.persist();
+                                setfiles(e.dataTransfer.files);
+                                setIsFile(false);
+                                setover(false);
+                            }}
+                            onDragOver={e => {
+                                e.preventDefault();
+                                setover(true);
+                            }}
+                            onDragLeave={e => {
+                                e.preventDefault();
+                                setover(false);
+                            }}
 
-                            >
-                                <div className={over ? "upload-container over" : "upload-container"}>
+                        >
+                            <div className={over ? "upload-container over" : "upload-container"}>
 
-                                    <UploadIcon />
-                                    <h3 className="SemiBold">Drag and drop file to upload</h3>
-                                    <input
-                                        style={{ display: "none" }}
-                                        type="file"
-                                        accept="image/*"
-                                        ref={$input}
-                                        onChange={e => {
-                                            setfiles(e.target.files);
-                                            setIsFile(false);
-                                        }}
-                                        multiple={maxFiles > 1}
-                                    />
-                                    {/* <p className="Medium" style={{ color: ThemeColors.deactive }} >or</p> */}
-                                    <CustomButton title="Choose file" width="65%" />
-                                </div>
+                                <UploadIcon />
+                                <h3 className="SemiBold">Drag and drop file to upload</h3>
+                                <input
+                                    style={{ display: "none" }}
+                                    type="file"
+                                    accept="image/*"
+                                    ref={$input}
+                                    onChange={e => {
+                                        setfiles(e.target.files);
+                                        setIsFile(false);
+                                    }}
+                                    multiple={maxFiles > 1}
+                                />
+                                {/* <p className="Medium" style={{ color: ThemeColors.deactive }} >or</p> */}
+                                <CustomButton title="Choose file" width="65%" />
                             </div>
                         </div>
-                    </div>
+                    </CustomCard>
                 }
                 {!isFile && files.map(file => (
                     <>
