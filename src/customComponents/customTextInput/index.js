@@ -1,22 +1,28 @@
-import React from "react";
-import { useState } from "react";
+import React, { useRef,useEffect,useState } from "react";
+
 import { CrossEyeIcon } from "../../assets/icon/inputIcon";
 import { formControl, formControlOtp, InputLabel, StyledInput } from "./indexCss";
 
-export default function CustomInput(props, formdata) {
-    const { name, placeholder, type, lefticon, righticon, label, id, onChange ,maxLength,tabIndex ,onKeyUp,onClick} = props;
+export default function CustomInput(props) {
+    const { name, placeholder, type, lefticon, righticon, label, id,value, onChange, maxLength, tabIndex, onKeyUp, onClick, inputRef } = props;
     const [inputType, setInputType] = useState(false);
-
+    const ref = useRef();
+   console.log(value)
     const changeType = () => {
         if (type === 'password') {
             setInputType(!inputType);
         }
     }
+    useEffect(() => {
+        if (inputRef) {
+            ref.current.focus();
+        }
+    }, [inputRef])
     return (
         maxLength === "1" ?
             <StyledInput className={"inputWithIcon"}>
                 <div className="left-icon">{lefticon}</div>
-                <input type={type} name={name} style={formControlOtp} maxLength={maxLength} tabIndex={tabIndex} onClick={onClick} onKeyUp={onKeyUp} />
+                <input ref={ref} type={type} name={name} value={value} style={formControlOtp} maxLength={maxLength} tabIndex={tabIndex} onChange={(e)=>onClick(e,tabIndex)} onKeyUp={(e)=>onKeyUp(e,tabIndex)} />
                 <div className="right-icon">{righticon}</div>
             </StyledInput>
             : <>

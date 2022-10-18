@@ -1,12 +1,13 @@
-import React from 'react'
-import Header from '../../navigations/header'
-import SelectInstitute from './selectInstitute'
-import { Outlet, Route, Routes } from 'react-router-dom';
-import { ThemeColors } from '../../theme/theme';
+import React from 'react';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import img from '../../assets/images/Group 2.png';
+import Header from '../../navigations/header';
+import { ThemeColors } from '../../theme/theme';
 
 
-const Private = () => {
+const PrivateLayout = () => {
+  const auth=false
+  const pathname= useLocation()
   return (
     <>
       <div className='outerDiv'>
@@ -14,7 +15,9 @@ const Private = () => {
           <div className='outerflex'>
             <div className='left-flex' style={{ backgroundColor: ThemeColors.light }}>
               <Header />
-              <div className="container-flex"><Outlet /></div>
+              <div className="container-flex">
+                {auth?<Outlet />:<Navigate to ='auth' state={{from:pathname}} replace/>}
+                </div>
             </div>
             <div className='right-flex' style={{ backgroundColor: ThemeColors.primary }}>
               <img src={img} alt="" className='responsiveImg' />
@@ -27,13 +30,5 @@ const Private = () => {
   )
 }
 
-const PrivateLayout = ({ auth, setAuth }) => {
-  return (
-    <Routes>
-      <Route element={<Private />}>
-        <Route path='select-institute' element={<SelectInstitute />} />
-      </Route>
-    </Routes>
-  )
-}
+
 export default PrivateLayout

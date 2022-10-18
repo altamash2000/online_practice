@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 import { EyeIcon, MailIcon, PasswordIcon } from '../../../assets/icon/inputIcon';
 import { emailregex, passwordRegex } from '../../../assets/regex';
@@ -14,7 +14,9 @@ import { Formik } from "formik";
 const LoginPage = ({ auth, setAuth, setHeight, height }) => {
   const { innerWidth: width } = window;
   const navigate = useNavigate();
-
+  const pathname= useLocation()
+  const from= pathname.pathname?pathname.pathname:"/"
+  console.log(from);
   const signUp = () => {
     console.log("innerwidth", width)
     width <= 480 && setHeight(true)
