@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { ThemeColors } from '../../theme/theme'
 
-export default function UnderLineText({ text, subText }) {
+export default function UnderLineText(props) {
+    const {subText, heading} = props.value;
     const P = styled.p`
         color: ${ThemeColors.primary};
         position: relative;
@@ -20,7 +21,7 @@ export default function UnderLineText({ text, subText }) {
         `;
     return (
         <>
-            <P>{text}</P>
+            <P>{heading}</P>
             <p>{subText}</p>
         </>
     )
