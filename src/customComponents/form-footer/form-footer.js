@@ -11,7 +11,7 @@ export default function FormFooter(props) {
         fontWeight: '600'
     }
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between',marginTop:'20px' }}>
             <p className="pointer" style={{ fontSize: 'large', color: ThemeColors.other }}>{leftText}</p>
             <p style={rightTxt} className="pointer" onClick={() => rightClick()}>{rightText}</p>
         </div>

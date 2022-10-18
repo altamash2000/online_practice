@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import { numberOnly } from '../../../assets/regex'
 import CustomButton from '../../../customComponents/button/customButton'
 import CustomCard from '../../../customComponents/card/CustomCard'
@@ -8,8 +9,7 @@ import { ThemeColors } from '../../../theme/theme'
 
 export default function Otp() {
   const [otpfield, setOtpField] = useState(['', '', '', "", "", ''])
-  // const otpfield = ['otp1', 'otp2', 'otp3', 'otp4', 'otp5', 'otp6']
-  // const [value, setValue] = useState('');
+
   const rightTxt = {
     color: ThemeColors.primary,
     fontSize: 'large',
@@ -20,17 +20,13 @@ export default function Otp() {
   }, [])
 
   const handleChange = (e, index) => {
-    console.log(e, "handle change called")
     let isNumber = numberOnly.test(e.target.value)
     if (!isNumber) return
-    console.log("change in otp", e, index);
     let otpfieldcopy = [...otpfield]
     otpfieldcopy[index] = e.target.value; setOtpField(otpfieldcopy)
-
   }
 
   const inputfocus = (elmnt, ind) => {
-    console.log("inputfocus called")
     const index = elmnt.target.tabIndex
     if (elmnt.key === "Delete" || elmnt.key === "Backspace") {
       let otpfieldcopy = [...otpfield]
@@ -49,7 +45,6 @@ export default function Otp() {
       }
     }
   }
-  console.log(otpfield)
   return (
     <section>
       <UnderLineText text='Enter OTP' subText='Enter the 6 digit code that you received on your email' />
