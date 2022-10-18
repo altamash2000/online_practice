@@ -1,34 +1,46 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { numberOnly } from '../../../assets/regex'
 import CustomButton from '../../../customComponents/button/customButton'
+import CustomCard from '../../../customComponents/card/CustomCard'
 import CustomInput from '../../../customComponents/customTextInput'
 import UnderLineText from '../../../customComponents/under-line-text/underLineText'
 import { ThemeColors } from '../../../theme/theme'
-import CustomCard from '../../../customComponents/card/CustomCard';
 
 export default function Otp() {
-  const [otpfield, setOtpField] = useState(['otp1', 'otp2', 'otp3', 'otp4', 'otp5', 'otp6'])
-  // const [value, setValue] = useState('');
+  const [otpfield, setOtpField] = useState(['', '', '', "", "", ''])
+
   const rightTxt = {
     color: ThemeColors.primary,
     fontSize: 'large',
     fontFamily: 'SemiBold',
     fontWeight: '600'
   }
+  useEffect(() => {
+  }, [])
 
-  const handleChange = (value,e) => {
-  console.log("change in otp",value,e);
+  const handleChange = (e, index) => {
+    let isNumber = numberOnly.test(e.target.value)
+    if (!isNumber) return
+    let otpfieldcopy = [...otpfield]
+    otpfieldcopy[index] = e.target.value; setOtpField(otpfieldcopy)
   }
 
-  const inputfocus = (elmnt) => {
+  const inputfocus = (elmnt, ind) => {
+    const index = elmnt.target.tabIndex
     if (elmnt.key === "Delete" || elmnt.key === "Backspace") {
-      const next = elmnt.target.tabIndex - 1;
+      let otpfieldcopy = [...otpfield]
+      otpfieldcopy[ind] = '';
+      setOtpField(otpfieldcopy)
+      const next = index - 1;
       if (next > -1) {
         elmnt.target.form.elements[next].focus()
       }
     }
     else {
-      const next = elmnt.target.tabIndex + 1;
-      if (next < 6) {
+      const next = index + 1;
+      let num = numberOnly.test(elmnt.target.form.elements[index].value)
+      if (next < 6 && num) {
         elmnt.target.form.elements[next].focus()
       }
     }
@@ -41,7 +53,7 @@ export default function Otp() {
           <div style={{ display: 'flex', columnGap: '2rem' }}>
             {
               otpfield.map((item, i) =>
-                <CustomInput  key={i} name="text" placeholder={item} type="text" value={item} autoComplete="off" label={item} tabIndex={i} maxLength="1" onClick={e => handleChange({ item }, e)} onKeyUp={e => inputfocus(e)} />
+                <CustomInput key={i} name="text" placeholder={item} type="text" inputRef={i === 0 && true} value={item} autoComplete="off" label={item} tabIndex={i} maxLength="1" onClick={handleChange} onKeyUp={inputfocus} />
               )
             }
           </div>
