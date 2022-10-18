@@ -2,6 +2,8 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 
+import { Formik } from "formik";
+import { observer } from 'mobx-react';
 import { EyeIcon, MailIcon, PasswordIcon } from '../../../assets/icon/inputIcon';
 import { emailregex, passwordRegex } from '../../../assets/regex';
 import CustomButton from '../../../customComponents/button/customButton';
@@ -9,10 +11,6 @@ import CustomCard from '../../../customComponents/card/CustomCard';
 import CustomInput from '../../../customComponents/customTextInput';
 import FormFooter from '../../../customComponents/form-footer/form-footer';
 import UnderLineText from '../../../customComponents/under-line-text/underLineText';
-import { ThemeColors } from '../../../theme/theme';
-import { Formik } from "formik";
-import { observer } from 'mobx-react';
-import RootStore from '../../../MobX';
 import AuthService from '../../../Services/AuthService';
 
 const LoginPage = observer(({ auth, setAuth, setHeight, height }) => {
@@ -34,7 +32,7 @@ const LoginPage = observer(({ auth, setAuth, setHeight, height }) => {
   return (
     <section>
       <UnderLineText text='Hey, enter your details to get sign in to your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
-      <p>{RootStore.authStore.user.username}  </p>
+
       <CustomCard>
         <Formik
           initialValues={{ email: "", password: "" }}
