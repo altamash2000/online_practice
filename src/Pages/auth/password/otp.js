@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from "react-i18next";
 
 import { numberOnly } from '../../../assets/regex'
 import CustomButton from '../../../customComponents/button/customButton'
@@ -9,6 +10,7 @@ import { ThemeColors } from '../../../theme/theme'
 
 export default function Otp() {
   const [otpfield, setOtpField] = useState(['', '', '', "", "", ''])
+  const { t } = useTranslation();
 
   const rightTxt = {
     color: ThemeColors.primary,
@@ -47,7 +49,10 @@ export default function Otp() {
   }
   return (
     <section>
-      <UnderLineText text='Enter OTP' subText='Enter the 6 digit code that you received on your email' />
+      <UnderLineText value={{
+          heading: t("authPage.greeting"),
+          subText: t("authPage.subHeading"),
+        }}  />
       <CustomCard>
         <form>
           <div style={{ display: 'flex', columnGap: '2rem' }}>

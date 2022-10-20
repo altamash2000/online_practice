@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { UploadIcon } from "../../../assets/icon/inputIcon";
 import CustomButton from "../../../customComponents/button/customButton";
 import UnderLineText from '../../../customComponents/under-line-text/underLineText';
 import CustomCard from '../../../customComponents/card/CustomCard';
+
 
 function removeItems(arr, item) {
     for (var i = 0; i < item; i++) {
@@ -37,6 +39,8 @@ function useFiles({ initialState = [], maxFiles }) {
 }
 
 function Upload({ onDrop, maxFiles = 1 }) {
+    const { t } = useTranslation();
+
     const [isFile, setIsFile] = useState(true);
     const [over, setover] = useState(false);
     const [files, setfiles] = useFiles({ maxFiles });
@@ -54,7 +58,10 @@ function Upload({ onDrop, maxFiles = 1 }) {
     return (
         <>
             <section>
-                <UnderLineText text='Upload Profile Photo' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
+                <UnderLineText value={{
+                    heading: t("authPage.greeting"),
+                    subText: t("authPage.subHeading"),
+                }} />
                 {isFile &&
                     <CustomCard>
                         <div style={{ margin: '10px' }}

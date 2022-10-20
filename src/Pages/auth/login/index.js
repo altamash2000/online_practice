@@ -1,16 +1,15 @@
+import { Formik } from "formik";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { EyeIcon,MailIcon,PasswordIcon,} from "../../../assets/icon/inputIcon";
+import { EyeIcon, MailIcon, PasswordIcon } from "../../../assets/icon/inputIcon";
 import { emailregex, passwordRegex } from "../../../assets/regex";
 import CustomButton from "../../../customComponents/button/customButton";
+import CustomCard from "../../../customComponents/card/CustomCard";
 import CustomInput from "../../../customComponents/customTextInput";
 import FormFooter from "../../../customComponents/form-footer/form-footer";
 import UnderLineText from "../../../customComponents/under-line-text/underLineText";
-import { ThemeColors } from "../../../theme/theme";
-import CustomCard from "../../../customComponents/card/CustomCard";
-import { useTranslation, Trans } from "react-i18next";
-import { Formik } from "formik";
 const lang = {
   en: { nativeName: "English" },
   hi: { nativeName: "Hindi" },
@@ -97,31 +96,12 @@ const LoginPage = ({ auth, setAuth, setHeight, height }) => {
                 {errors.password && touched.password && (
                   <div className="input-feedback">{errors.password}</div>
                 )}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <p>
-                    <input type="checkbox" value="RememberMe" />
-                    Remember me
-                  </p>
-                  <p
-                    style={{ color: ThemeColors.primary }}
-                    className="pointer"
-                    onClick={forgotPass}
-                  >
-                    Forgot Password?
-                  </p>
+                <div style={{display: "flex",flexDirection: "row",justifyContent: "space-between",alignItems:'start', margin:'0',padding:'0',marginBottom:'25px'}}>
+                  <p style={{ margin:'0',padding:'0', fontFamily:'Medium',fontSize:'large' }}> <input type="checkbox" value="RememberMe" /> Remember me</p>
+                  <p style={{ margin:'0',padding:'0', fontFamily:'Medium',fontSize:'large' }}className="pointer"onClick={forgotPass}> Forgot Password?</p>
                 </div>
                 <CustomButton title="Login" type="submit" />
-                <FormFooter
-                  leftText="Need An Account?"
-                  rightClick={signUp}
-                  rightText="Signup"
-                />
+                <FormFooter leftText="Need An Account?"rightClick={signUp}rightText="Signup"/>
               </form>
             );
           }}

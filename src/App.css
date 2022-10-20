@@ -135,6 +135,8 @@ header {
     position: relative;
     text-align: left;
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .selectButton p {
     margin: 0;

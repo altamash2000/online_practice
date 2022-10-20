@@ -3,7 +3,7 @@ import { ThemeColors } from "../../theme/theme";
 export const StyledInput = styled.div`
   &.inputWithIcon {
     position: relative;
-    margin:10px 0 10px 0;
+    margin:10px 0 22px 0;
   }
   .left-icon {
     position: absolute;

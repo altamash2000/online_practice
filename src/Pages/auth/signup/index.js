@@ -1,7 +1,10 @@
 import { Formik } from 'formik';
 import React, { useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
+
+
 import { ClassIcon, EyeIcon, MailIcon, PasswordIcon, UserIcon } from '../../../assets/icon/inputIcon';
 import { emailregex, passwordRegex } from '../../../assets/regex';
 import CustomButton from '../../../customComponents/button/customButton';
@@ -12,9 +15,10 @@ import CustomSelect from '../../../customComponents/select/customeSelect';
 import UnderLineText from '../../../customComponents/under-line-text/underLineText';
 export default function Signup({ setHeight, height, width }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   useEffect(() => {
     width <= 480 && setHeight(true)
-  }, [setHeight,width])
+  }, [setHeight, width])
 
   const Login = () => {
     console.log("height", height, setHeight)
@@ -25,7 +29,10 @@ export default function Signup({ setHeight, height, width }) {
   return (
     <>
       <div className='section'>
-        <UnderLineText text='Hey, enter your details to get sign up to create your account' subText='when an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
+        <UnderLineText value={{
+          heading: t("authPage.greeting"),
+          subText: t("authPage.subHeading"),
+        }} />
         <CustomCard>
           <Formik
             initialValues={{ email: '', password: '', confirmPassword: '' }}
@@ -65,7 +72,6 @@ export default function Signup({ setHeight, height, width }) {
                   {errors.password && touched.password && (<div className="input-feedback">{errors.password}</div>)}
                   <CustomInput name="confirmPassword" id="confirmPassword" onChange={handleChange} placeholder="Confirm Password" type="password" label="Confirm Password" lefticon={<PasswordIcon />} righticon={<EyeIcon />} />
                   {errors.confirmPassword && touched.confirmPassword && (<div className="input-feedback">{errors.confirmPassword}</div>)}
-                  <br />
                   <CustomButton title="Signup" type="submit" />
                   <FormFooter leftText='Already Have An Account' rightClick={Login} rightText='Login' />
                 </form>

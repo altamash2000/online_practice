@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
+
 import { MailIcon } from '../../../assets/icon/inputIcon'
 import CustomButton from '../../../customComponents/button/customButton'
 import CustomInput from '../../../customComponents/customTextInput'
@@ -8,6 +10,8 @@ import UnderLineText from '../../../customComponents/under-line-text/underLineTe
 import CustomCard from '../../../customComponents/card/CustomCard';
 
 export default function ForgotPassword() {
+  const { t } = useTranslation();
+
   const navigate = useNavigate(0)
   const onclick = () => {
     navigate("/auth/otp")
@@ -17,7 +21,10 @@ export default function ForgotPassword() {
   }
   return (
     <section>
-      <UnderLineText text='Forgot Password' subText='When an unknown printer took a galley of type and scrambled it to make a type specimen book.' />
+      <UnderLineText value={{
+          heading: t("authPage.greeting"),
+          subText: t("authPage.subHeading"),
+        }}  />
       <CustomCard>
         <form>
           <CustomInput name="Email" placeholder="Email Address" type="email" label="Email Address" lefticon={<MailIcon />} righticon={""} />
